@@ -2,7 +2,7 @@
 
 Hệ thống điều khiển bay và trạm thu phát dữ liệu từ xa (Telemetry Ground Station) hoàn chỉnh cho máy bay không người lái (UAV / Drone), bao gồm:
 1. **Phần Cứng (Hardware / PCB):** Bo mạch Flight Controller tự thiết kế trên KiCad dựa trên vi điều khiển STM32F103, tích hợp cảm biến IMU, Barometer, La bàn, GPS, điều khiển 4 ESC động cơ, và bộ chuyển nguồn BEC hiệu suất cao. Đặc biệt có bộ công cụ tự động định tuyến mạch 1 lớp (Single-Layer Routing) bằng thuật toán A* (C++ / Python).
-2. **Phần Mềm (Firmware & Ground Station):** Trạm mặt đất nhúng trên vi điều khiển **ESP32-C3** chạy **ESP-IDF v5/v6** & **FreeRTOS**, kết nối module RF **nRF24L01+** tốc độ cao (100 Hz), phát **WiFi SoftAP** nội bộ và cung cấp **Web Dashboard thời gian thực** (chân trời nhân tạo, la bàn số, đo xung động cơ, vị trí cần điều khiển) mà không cần mạng Internet.
+2. **Phần Mềm (Firmware Ground Station):** Trạm mặt đất nhúng trên vi điều khiển **ESP32-C3** chạy **ESP-IDF v5/v6** & **FreeRTOS**, kết nối module RF **nRF24L01+** tốc độ cao (100 Hz), giải mã trực tiếp các gói tin telemetry góc nghiêng, động cơ, cần lái và xuất dữ liệu thời gian thực qua Serial Monitor.
 
 ---
 
@@ -16,7 +16,6 @@ Hệ thống điều khiển bay và trạm thu phát dữ liệu từ xa (Telem
   - [3.1 Driver nRF24L01+ & RF 2.480 GHz](#31-driver-nrf24l01--rf-2480-ghz)
   - [3.2 Giao thức Telemetry nhị phân (Binary Protocol)](#32-giao-thức-telemetry-nhị-phân-binary-protocol)
   - [3.3 Kiến trúc đa luồng FreeRTOS](#33-kiến-trúc-đa-luồng-freertos)
-  - [3.4 Web Dashboard thời gian thực](#34-web-dashboard-thời-gian-thực)
 - [4. Sơ Đồ Nối Dây ESP32-C3 và nRF24L01](#4-sơ-đồ-nối-dây-esp32-c3-và-nrf24l01)
 - [5. Hướng Dẫn Biên Dịch & Nạp Code](#5-hướng-dẫn-biên-dịch--nạp-code)
 - [6. Kỹ Năng Kỹ Thuật Đạt Được (Portfolio Highlights)](#6-kỹ-năng-kỹ-thuật-đạt-được-portfolio-highlights)
@@ -41,18 +40,8 @@ Hệ thống điều khiển bay và trạm thu phát dữ liệu từ xa (Telem
 |          GROUND STATION (ESP32-C3 RISC-V SoC)              |
 |  - FreeRTOS Task 1: Thu nhận SPI FIFO & Kiểm tra CRC-8       |
 |  - FreeRTOS Task 2: Thống kê tần số gói (Hz), Link Quality  |
-|  - WiFi SoftAP: Phát mạng "UAV-GroundStation"               |
-|  - HTTP Web Server: Phục vụ Web Dashboard & REST API         |
-+------------------------------+------------------------------+
-                               |
-                    WiFi nội bộ 192.168.4.1
-                               |
-                               v
-+-------------------------------------------------------------+
-|            CLIENT (Smartphone / Tablet / PC Browser)        |
-|  - Chân trời nhân tạo (Artificial Horizon) HTML5 Canvas     |
-|  - La bàn số Heading, Đo 4 kênh động cơ ESC, RC Sticks      |
-|  - Giám sát trạng thái Armed / Failsafe tức thời            |
+|  - UART / Serial: Xuất log telemetry thời gian thực tốc độ  |
+|    cao (Roll, Pitch, Heading, Motors, RC Sticks, Armed, FS)  |
 +-------------------------------------------------------------+
 ```
 
@@ -99,7 +88,7 @@ Thư mục: `main/`
 ### 3.1 Driver nRF24L01+ & RF 2.480 GHz
 - Giao tiếp qua **SPI phần cứng** với tần số xung nhịp 2 MHz đảm bảo độ ổn định cao với module anten rời PA/LNA.
 - Cấu hình ở chế độ **PRX (Primary Receiver)**, địa chỉ nhận 5 byte `{ 0x6B, 0xE3, 0x1C, 0x95, 0xA2 }`.
-- Hoạt động tại **Kênh 80 (2480 MHz)**: Tần số này nằm ngoài phổ các kênh WiFi 1–11 thông thường, hạn chế tối đa hiện tượng tự can nhiễu giữa bộ phát WiFi của ESP32 và module nRF24L01+.
+- Hoạt động tại **Kênh 80 (2480 MHz)**: Tần số này nằm ngoài phổ các kênh WiFi 1–11 thông thường, hạn chế tối đa hiện tượng can nhiễu.
 
 ### 3.2 Giao thức Telemetry nhị phân (Binary Protocol)
 Gói tin có kích thước cố định **32 byte**, thiết kế tối ưu cho nRF24L01 payload:
@@ -119,15 +108,7 @@ Gói tin có kích thước cố định **32 byte**, thiết kế tối ưu cho
 
 ### 3.3 Kiến trúc đa luồng FreeRTOS
 - **`telemetry_rx_task` (Priority 5, 4KB Stack):** Quét bộ đệm RX FIFO của nRF24, kiểm tra CRC-8, giải mã cấu trúc dữ liệu nhị phân và cập nhật vào `GroundStationState` được bảo vệ bởi FreeRTOS Mutex.
-- **`telemetry_stats_task` (Priority 1, 3KB Stack):** Chu kỳ 1 giây, tính toán tần số nhận gói thực tế (Hz), tỷ lệ mất gói (Packet Loss Rate), chất lượng đường truyền sóng (Link Quality %) và giám sát timeout mất kết nối (Failsafe Timeout 600 ms).
-- **`httpd_task` (Priority 5, 8KB Stack):** Xử lý yêu cầu HTTP GET, trả về trang giao diện và API `/api/telemetry`.
-
-### 3.4 Web Dashboard thời gian thực
-- Toàn bộ giao diện được nhúng trực tiếp vào Flash của ESP32-C3 dưới dạng chuỗi HTML/CSS/JS thuần (`web_dashboard.h`), **không phụ thuộc bất kỳ thư viện ngoài nào (Zero-dependency)**, hoạt động trơn tru ngay cả khi không có kết nối Internet.
-- **Chân trời nhân tạo (Artificial Horizon):** Vẽ bằng HTML5 Canvas, chuyển động mượt mà theo góc Roll và Pitch truyền về từ cảm biến IMU.
-- **Thanh đo động cơ (Motor Output Bars):** Hiển thị trực quan độ rộng xung 4 kênh ESC (1000 µs - 2000 µs).
-- **Vị trí cần gạt RC (Stick Visualizer):** Mô phỏng tọa độ 2 cần điều khiển theo thời gian thực.
-- **REST API:** Đường dẫn `http://192.168.4.1/api/telemetry` trả về dữ liệu chuẩn JSON cho phép tích hợp với các ứng dụng Ground Station nâng cao (Mission Planner, Python telemetry logger,...).
+- **`telemetry_stats_task` (Priority 1, 3KB Stack):** Chu kỳ 1 giây, tính toán tần số nhận gói thực tế (Hz), tỷ lệ mất gói (Packet Loss Rate), chất lượng đường truyền sóng (Link Quality %) và giám sát timeout mất kết nối (Failsafe Timeout 600 ms). Xuất log trực quan ra Serial Monitor.
 
 ---
 
@@ -148,11 +129,6 @@ Gói tin có kích thước cố định **32 byte**, thiết kế tối ưu cho
 
 ## 5. Hướng Dẫn Biên Dịch & Nạp Code
 
-### Yêu cầu môi trường:
-- **ESP-IDF** phiên bản v5.x hoặc v6.x (đã kiểm thử tương thích).
-- Kit phát triển **ESP32-C3** (SuperMini hoặc DevKitC).
-
-### Các bước thực hiện:
 ```bash
 # 1. Cấu hình target chip ESP32-C3
 idf.py set-target esp32c3
@@ -164,15 +140,6 @@ idf.py build
 idf.py -p COMx flash monitor
 ```
 
-### Kết nối Web Dashboard:
-1. Dùng điện thoại hoặc máy tính quét mạng WiFi:
-   - **Tên WiFi (SSID):** `UAV-GroundStation`
-   - **Mật khẩu:** `uavtelemetry`
-2. Mở trình duyệt web và truy cập địa chỉ:
-   ```text
-   http://192.168.4.1
-   ```
-
 ---
 
 ## 6. Kỹ Năng Kỹ Thuật Đạt Được (Portfolio Highlights)
@@ -181,4 +148,3 @@ idf.py -p COMx flash monitor
 - **Thuật Toán Tự Động Hóa:** Áp dụng thuật toán tìm đường A* (A-Star) viết bằng C++ và tích hợp qua Python `pcbnew` API để giải bài toán định tuyến mạch in tự động.
 - **Lập Trình Vi Điều Khiển & Hệ Điều Hành Thời Gian Thực:** Lập trình C trên nền ESP-IDF, phân luồng đa nhiệm với FreeRTOS (Task Priority, Mutex, Timer, ISR safe).
 - **Giao Tiếp Vô Tuyến RF:** Giao tiếp SPI tốc độ cao với nRF24L01+, cấu hình thanh ghi RF, nhảy kênh tránh can nhiễu WiFi, tối ưu hóa kích thước khung truyền và kiểm lỗi CRC-8.
-- **Phát Triển Web Nhúng (Embedded Web):** Xây dựng SoftAP, HTTP Server nhúng, thiết kế UI/UX Dashboard trực quan với HTML5 Canvas và REST API phục vụ telemetry thời gian thực.
