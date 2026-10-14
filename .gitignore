@@ -1,0 +1,37 @@
+# ESP-IDF Build Artifacts
+build/
+sdkconfig.old
+dependencies.lock
+managed_components/
+
+# KiCad Artifacts & Backups
+**/*-backups/
+**/.history/
+**/*.kicad_prl
+**/*.kicad_pcb-bak
+**/*.kicad_sch-bak
+**/*.bak
+**/*.lck
+**/_autosave-*
+**/*.tmp
+
+# Compiled Libraries & Object Files
+*.dll
+*.so
+*.dylib
+*.exe
+*.o
+*.obj
+*.a
+
+# Python Cache & Logs
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# OS & Editor Artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/ipch/

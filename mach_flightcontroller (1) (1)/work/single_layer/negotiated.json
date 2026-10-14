@@ -1,0 +1,1 @@
+{"iteration": 49, "conflicts": [["G", "3.3", 10], ["G", "/GPIO1", 11], ["G", "/B13", 11], ["G", "/SPI1_MISO", 11], ["G", "/SPI1_MOSI", 11], ["G", "/SCL", 11], ["G", "/SDA", 11], ["G", "/5V_BEC1", 26], ["3.3", "/USART1_TX", 11], ["3.3", "/USART1_RX", 11], ["3.3", "/5V_BEC1", 9], ["/SPI1_MISO", "/SPI1_MOSI", 9], ["/SCL", "/SDA", 6]]}

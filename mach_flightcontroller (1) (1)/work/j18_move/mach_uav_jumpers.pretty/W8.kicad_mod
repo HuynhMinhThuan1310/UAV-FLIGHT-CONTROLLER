@@ -1,0 +1,77 @@
+(footprint "W8"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "W8"
+		(at 9.19 -10.795 0)
+		(layer "Cmts.User")
+		(uuid "0da0afc1-ee32-4508-bc37-148bb4d55106")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.13)
+			)
+		)
+	)
+	(property "Value" "WIRE /CE"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "79540037-9c9f-4531-add1-6264930a409c")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "228ee346-8ac0-4bc7-a47d-ebdbbfbb8b03")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ec2eac6a-e6c0-4a9e-a7db-e445eff7b143")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole board_only exclude_from_pos_files)
+	(duplicate_pad_numbers_are_jumpers yes)
+	(fp_line
+		(start 0 0)
+		(end 18.38 -21.59)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "Cmts.User")
+		(uuid "fbb0b432-f2fa-4150-a41a-a937f4146de5")
+	)
+	(pad "1" smd circle
+		(at 0 0)
+		(size 1.508 1.508)
+		(layers "B.Cu" "B.Mask")
+		(solder_mask_margin 0)
+		(uuid "23e7e1aa-39e8-4a2a-81a4-9f1acb1d2f80")
+	)
+	(pad "1" smd circle
+		(at 18.38 -21.59 90)
+		(size 0.8 0.8)
+		(layers "B.Cu" "B.Mask")
+		(solder_mask_margin 0)
+		(uuid "7d8d14cd-1396-4ba3-a1b2-653862e9f82c")
+	)
+	(embedded_fonts no)
+)

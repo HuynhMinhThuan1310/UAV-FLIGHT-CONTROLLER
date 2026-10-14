@@ -1,0 +1,71 @@
+{
+  "status": "DRAFT - NOT READY FOR FABRICATION",
+  "size_mm": [
+    58,
+    64
+  ],
+  "routing_layer": "B.Cu",
+  "vias": 0,
+  "front_tracks": 0,
+  "tracks": 473,
+  "remaining_connections": [
+    [
+      "/SPI1_MOSI",
+      "J32",
+      "6"
+    ],
+    [
+      "G",
+      "J21",
+      "3"
+    ],
+    [
+      "/SPI1_MISO",
+      "J32",
+      "4"
+    ],
+    [
+      "G",
+      "J20",
+      "3"
+    ],
+    [
+      "3.3",
+      "J20",
+      "4"
+    ],
+    [
+      "/GPIO1",
+      "J24",
+      "3"
+    ],
+    [
+      "/B14",
+      "J32",
+      "5"
+    ],
+    [
+      "/B13",
+      "J32",
+      "2"
+    ],
+    [
+      "/5V_BEC1",
+      "J26",
+      "4"
+    ],
+    [
+      "/RECV-CH6",
+      "J2",
+      "6"
+    ]
+  ],
+  "known_limits": [
+    "10 unconnected PCB items before final check",
+    "Header pad spacing is 0.15 mm; original project requires 0.20 mm. No clearance rules were relaxed.",
+    "Schematic still has SBUS, ADC0, GPIO2, SERVO and AUX_PWM connectivity issues identified earlier.",
+    "GPS SMD connector moved to bottom side.",
+    "Power trace widths are not validated against load current."
+  ],
+  "backup": "work/single_layer/mach_uav_before_single_layer.kicad_pcb"
+}

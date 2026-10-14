@@ -1,0 +1,293 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-24T11:24:41",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/e7d66091-957f-439c-8f07-f68f25f64183",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Pin 38 [5V, Power input, Line]",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 0.5842
+                            },
+                            "uuid": "a2491d85-04b0-4dbb-9398-aec281ffd2ae"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Pin 18 [3.3, Power input, Line]",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 0.6096
+                            },
+                            "uuid": "5f261155-b427-4be1-9d6e-44543cf836fb"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Pin 19 [G, Power input, Line]",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 1.143
+                            },
+                            "uuid": "665e72b5-2715-4e65-9120-060954ce37a4"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Both G and GND are attached to the same items; G will be used in the netlist",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Hidden pin 20 [G, Power input, Line]",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 1.143
+                            },
+                            "uuid": "ef8941d9-ad5f-4f2a-8e4f-98c9edb040c4"
+                        },
+                        {
+                            "description": "Label 'GND'",
+                            "pos": {
+                                "x": 0.3937,
+                                "y": 1.2954
+                            },
+                            "uuid": "13ea793c-9a1c-4de5-9715-8a831961c68f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "multiple_net_names"
+                },
+                {
+                    "description": "Both 3.3 and 3V3 are attached to the same items; 3.3 will be used in the netlist",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Hidden pin 40 [3.3, Power input, Line]",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 0.6096
+                            },
+                            "uuid": "8326e899-a3cb-49ac-9d71-b2a6a11bd62b"
+                        },
+                        {
+                            "description": "Label '3V3'",
+                            "pos": {
+                                "x": 0.8763,
+                                "y": 0.4953
+                            },
+                            "uuid": "316ee98e-5407-4220-b69d-794c74499ef0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "multiple_net_names"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'PA11'",
+                            "pos": {
+                                "x": 2.5781,
+                                "y": 0.9398
+                            },
+                            "uuid": "ed4cff7c-7583-413c-8e8c-6cc8da15d7c8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'PA12'",
+                            "pos": {
+                                "x": 2.5781,
+                                "y": 0.9652
+                            },
+                            "uuid": "e5d372ee-495f-411a-b247-e6525f0bdc4f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'ADC1'",
+                            "pos": {
+                                "x": 2.6924,
+                                "y": 0.762
+                            },
+                            "uuid": "d64a888f-0f63-44b7-a2ef-a1bd88d2196b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'ADC2'",
+                            "pos": {
+                                "x": 2.6924,
+                                "y": 0.7874
+                            },
+                            "uuid": "8d9bd52b-06a7-4881-8f69-0049316a0e85"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'VB'",
+                            "pos": {
+                                "x": 2.7051,
+                                "y": 0.6096
+                            },
+                            "uuid": "d3551099-2592-41df-9d58-7dd5a70c8fed"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'C13'",
+                            "pos": {
+                                "x": 2.7305,
+                                "y": 1.0414
+                            },
+                            "uuid": "15c808de-0c80-4d30-a413-735376297dd9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'C14'",
+                            "pos": {
+                                "x": 2.7305,
+                                "y": 1.0668
+                            },
+                            "uuid": "39925f75-8f18-4dbf-8028-dc803f647f92"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'C15'",
+                            "pos": {
+                                "x": 2.7305,
+                                "y": 1.0922
+                            },
+                            "uuid": "e4f7e9ea-9c89-4abc-8baa-ceb496c238d4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'STM32F103C8T6'",
+                    "items": [
+                        {
+                            "description": "Symbol U3 [ZC323000]",
+                            "pos": {
+                                "x": 2.9337,
+                                "y": 0.8636
+                            },
+                            "uuid": "b0d72284-d089-4a89-b5cf-c9836b8af872"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'B15'",
+                            "pos": {
+                                "x": 3.1623,
+                                "y": 1.016
+                            },
+                            "uuid": "9f0da02e-797a-4693-8844-6161a6c3a0e8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'GPIO1'",
+                            "pos": {
+                                "x": 3.1877,
+                                "y": 0.9398
+                            },
+                            "uuid": "6125f63f-df35-44e9-92e7-831ddb6d0ff8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                }
+            ]
+        }
+    ],
+    "source": "mach_uav.kicad_sch"
+}

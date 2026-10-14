@@ -1,0 +1,3020 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-24T11:12:54",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "mach_uav.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/USART3_TX] of J26 on F.Cu",
+                    "pos": {
+                        "x": 108.425,
+                        "y": 113.5
+                    },
+                    "uuid": "25efd649-d2a9-4a5c-9e6b-463cd8dba3ba"
+                },
+                {
+                    "description": "PTH pad 15 [/USART3_TX] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 135.025
+                    },
+                    "uuid": "c18dcd6b-c00f-452c-8122-6c0bc8bc3a4b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [/USART3_RX] of J26 on F.Cu",
+                    "pos": {
+                        "x": 109.425,
+                        "y": 113.5
+                    },
+                    "uuid": "5c5fb14a-f522-453f-95b2-3cc3ab412342"
+                },
+                {
+                    "description": "PTH pad 16 [/USART3_RX] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 137.565
+                    },
+                    "uuid": "628f7d87-fe86-41b1-b3e8-a1b2f2a96c7b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J1",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 105.525
+                    },
+                    "uuid": "62f81d6a-f122-4e5c-b2f8-079c5df51139"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 105.525
+                    },
+                    "uuid": "a313df79-5d3d-4185-8060-c5bc5e506c80"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 116.825
+                    },
+                    "uuid": "6e972b6c-34d5-4150-9927-30471e1b7c1f"
+                },
+                {
+                    "description": "PTH pad 3 [G] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 118.825
+                    },
+                    "uuid": "1572c99d-273f-4191-acfc-00094b9822e3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 3 [G] of J26 on F.Cu",
+                    "pos": {
+                        "x": 110.425,
+                        "y": 113.5
+                    },
+                    "uuid": "367974c8-ab48-4201-b2dc-1233a1f339d3"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 116.825
+                    },
+                    "uuid": "6e972b6c-34d5-4150-9927-30471e1b7c1f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 105.525
+                    },
+                    "uuid": "a313df79-5d3d-4185-8060-c5bc5e506c80"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 105.525
+                    },
+                    "uuid": "5cdf4c09-6cc5-409f-9d81-642e6c0e7b48"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 105.525
+                    },
+                    "uuid": "37e83114-cc5f-4d06-b334-8603404f67de"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 105.525
+                    },
+                    "uuid": "5cdf4c09-6cc5-409f-9d81-642e6c0e7b48"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 105.525
+                    },
+                    "uuid": "37e83114-cc5f-4d06-b334-8603404f67de"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 105.525
+                    },
+                    "uuid": "ce97c4e7-feed-4a8e-bdec-332d4ff9a7f7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 105.525
+                    },
+                    "uuid": "37e83114-cc5f-4d06-b334-8603404f67de"
+                },
+                {
+                    "description": "PTH pad 3 [G] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 112.575
+                    },
+                    "uuid": "444c5a21-14e6-437f-8974-8b456b1842f8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [G] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 112.575
+                    },
+                    "uuid": "444c5a21-14e6-437f-8974-8b456b1842f8"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 118.625
+                    },
+                    "uuid": "d3f76c47-65b9-45cb-a9ee-4878d73a018d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [G] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 112.575
+                    },
+                    "uuid": "444c5a21-14e6-437f-8974-8b456b1842f8"
+                },
+                {
+                    "description": "Pad 3 [G] of J26 on F.Cu",
+                    "pos": {
+                        "x": 110.425,
+                        "y": 113.5
+                    },
+                    "uuid": "367974c8-ab48-4201-b2dc-1233a1f339d3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 105.525
+                    },
+                    "uuid": "ce97c4e7-feed-4a8e-bdec-332d4ff9a7f7"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 105.525
+                    },
+                    "uuid": "f2a474a1-f707-4d29-b563-ebea25c7b62d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 118.625
+                    },
+                    "uuid": "d3f76c47-65b9-45cb-a9ee-4878d73a018d"
+                },
+                {
+                    "description": "PTH pad 19 [G] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 145.185
+                    },
+                    "uuid": "66d94896-40cd-4085-ac7e-15918014708a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 20 [G] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 147.725
+                    },
+                    "uuid": "fc4e1677-aa89-438c-b04c-34fa46bff556"
+                },
+                {
+                    "description": "PTH pad 19 [G] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 145.185
+                    },
+                    "uuid": "66d94896-40cd-4085-ac7e-15918014708a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 39 [G] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 102.005
+                    },
+                    "uuid": "4fc06062-25ca-4f13-9d3a-1419731598ae"
+                },
+                {
+                    "description": "PTH pad 19 [G] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 145.185
+                    },
+                    "uuid": "66d94896-40cd-4085-ac7e-15918014708a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC1] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 106.525
+                    },
+                    "uuid": "aaaa37b2-172b-4a37-9d09-594a15fbb663"
+                },
+                {
+                    "description": "Pad 4 [/5V_BEC1] of J26 on F.Cu",
+                    "pos": {
+                        "x": 111.425,
+                        "y": 113.5
+                    },
+                    "uuid": "e45de11c-1cd3-42a8-a300-b078092ee3e1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 5 [/SCL] of J26 on F.Cu",
+                    "pos": {
+                        "x": 112.425,
+                        "y": 113.5
+                    },
+                    "uuid": "57ff44a6-4b4c-4700-b940-747e19eca06b"
+                },
+                {
+                    "description": "PTH pad 2 [/SCL] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 117.825
+                    },
+                    "uuid": "2e5251e2-4fd2-4e46-9ca6-0287f612b23e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/SCL] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 113.575
+                    },
+                    "uuid": "97fcac4c-a813-4900-9266-fe14861ae12e"
+                },
+                {
+                    "description": "Pad 5 [/SCL] of J26 on F.Cu",
+                    "pos": {
+                        "x": 112.425,
+                        "y": 113.5
+                    },
+                    "uuid": "57ff44a6-4b4c-4700-b940-747e19eca06b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 34 [/SCL] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 114.705
+                    },
+                    "uuid": "8a25cf37-a2dd-47fa-ac2b-28a782466a20"
+                },
+                {
+                    "description": "PTH pad 4 [/SCL] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 113.575
+                    },
+                    "uuid": "97fcac4c-a813-4900-9266-fe14861ae12e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 6 [/SDA] of J26 on F.Cu",
+                    "pos": {
+                        "x": 113.425,
+                        "y": 113.5
+                    },
+                    "uuid": "15b1957b-adcd-4c1b-a54e-150d86de3a39"
+                },
+                {
+                    "description": "PTH pad 1 [/SDA] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 116.825
+                    },
+                    "uuid": "cc2df3b4-ced8-4ce1-96c6-200c369b8e83"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/SDA] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 114.575
+                    },
+                    "uuid": "a42ac6e3-d8ba-4acb-992c-db15a4b4fa18"
+                },
+                {
+                    "description": "Pad 6 [/SDA] of J26 on F.Cu",
+                    "pos": {
+                        "x": 113.425,
+                        "y": 113.5
+                    },
+                    "uuid": "15b1957b-adcd-4c1b-a54e-150d86de3a39"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 35 [/SDA] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 112.165
+                    },
+                    "uuid": "07d40e2f-64b4-4fd3-850c-0990a3a92c84"
+                },
+                {
+                    "description": "PTH pad 5 [/SDA] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 114.575
+                    },
+                    "uuid": "a42ac6e3-d8ba-4acb-992c-db15a4b4fa18"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/ESC1] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 107.525
+                    },
+                    "uuid": "69dcb6fc-d55c-4966-988a-cf52fc2e528e"
+                },
+                {
+                    "description": "PTH pad 5 [/ESC1] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 109.625
+                    },
+                    "uuid": "d7f35679-8092-49d1-8f28-bcc0557baef2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/ESC2] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 107.525
+                    },
+                    "uuid": "be64c206-343c-4d5b-9249-b3d4376df29e"
+                },
+                {
+                    "description": "PTH pad 6 [/ESC2] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 112.165
+                    },
+                    "uuid": "87e7ad5e-2941-4a23-8587-aa35088238b3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [3.3] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 119.825
+                    },
+                    "uuid": "3da99a44-9475-4029-ac9d-eba9738d29c2"
+                },
+                {
+                    "description": "PTH pad 4 [3.3] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 119.825
+                    },
+                    "uuid": "21268828-1a8d-47ed-8165-1df4b6685950"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [3.3] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 111.575
+                    },
+                    "uuid": "d86a2b01-26c1-487a-b0bb-237fb71cf0a6"
+                },
+                {
+                    "description": "PTH pad 4 [3.3] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 119.825
+                    },
+                    "uuid": "21268828-1a8d-47ed-8165-1df4b6685950"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [3.3] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 118.625
+                    },
+                    "uuid": "0752bacf-e1c5-4002-a063-9d9656c877f1"
+                },
+                {
+                    "description": "PTH pad 2 [3.3] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 111.575
+                    },
+                    "uuid": "d86a2b01-26c1-487a-b0bb-237fb71cf0a6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 18 [3.3] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 142.645
+                    },
+                    "uuid": "75989f6f-330f-4494-bdcc-418fafd98363"
+                },
+                {
+                    "description": "PTH pad 40 [3.3] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 99.465
+                    },
+                    "uuid": "29ddfdf1-cffb-441c-805e-0356f9fcf32b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 18 [3.3] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 142.645
+                    },
+                    "uuid": "75989f6f-330f-4494-bdcc-418fafd98363"
+                },
+                {
+                    "description": "PTH pad 2 [3.3] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 118.625
+                    },
+                    "uuid": "0752bacf-e1c5-4002-a063-9d9656c877f1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/CE] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 119.625
+                    },
+                    "uuid": "75eac6fb-1849-4fe6-b807-dd8799551f70"
+                },
+                {
+                    "description": "PTH pad 22 [/CE] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 145.185
+                    },
+                    "uuid": "02f29563-707d-4801-b025-19a6cfc23b0a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/SPI1_CS] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 119.625
+                    },
+                    "uuid": "d2e03c98-12cb-41f1-97ab-ef89a6a78cf2"
+                },
+                {
+                    "description": "PTH pad 30 [/SPI1_CS] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 124.865
+                    },
+                    "uuid": "258cda11-6263-4eff-a420-1deeb1682bf1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/SPI1_SCK] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 120.625
+                    },
+                    "uuid": "ee3780de-d8b2-4293-89e9-cdeb045db576"
+                },
+                {
+                    "description": "PTH pad 31 [/SPI1_SCK] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 122.325
+                    },
+                    "uuid": "e44ccf6d-d21c-4353-a7f3-b3bdea6608a7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 6 [/SPI1_MOSI] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 120.625
+                    },
+                    "uuid": "7c9ec133-2857-4778-a7d2-7d7e46ae5faa"
+                },
+                {
+                    "description": "PTH pad 33 [/SPI1_MOSI] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 117.245
+                    },
+                    "uuid": "4cff3d00-a265-46f5-ad49-ed08de83173f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 7 [/SPI1_MISO] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 121.625
+                    },
+                    "uuid": "cd330704-011c-470d-a38b-38300832b67f"
+                },
+                {
+                    "description": "PTH pad 32 [/SPI1_MISO] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 119.785
+                    },
+                    "uuid": "f1f62b27-b707-49dc-b178-c9a9f3978181"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 8 [/IRQ] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 121.625
+                    },
+                    "uuid": "ffc2f026-67ed-49b7-9ca9-ab77632ce99b"
+                },
+                {
+                    "description": "PTH pad 23 [/IRQ] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 142.645
+                    },
+                    "uuid": "45744f00-cd5d-45b1-b0da-7842c5331ce9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J1",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 106.525
+                    },
+                    "uuid": "d56d616c-8b0c-4cae-9d9d-770c3f047729"
+                },
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 106.525
+                    },
+                    "uuid": "90f2447f-de44-4e1f-98c7-a0ed597ece60"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 106.525
+                    },
+                    "uuid": "90f2447f-de44-4e1f-98c7-a0ed597ece60"
+                },
+                {
+                    "description": "PTH pad 38 [/5V_BEC] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 104.545
+                    },
+                    "uuid": "f0136710-48f4-4708-a422-af587f41d1af"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/ESC4] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 107.525
+                    },
+                    "uuid": "6e3e95c9-0815-4240-9188-97b408841f75"
+                },
+                {
+                    "description": "PTH pad 8 [/ESC4] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 117.245
+                    },
+                    "uuid": "df79a530-4248-4203-a6c9-73fce72ddf70"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC2] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 106.525
+                    },
+                    "uuid": "e111db3e-fb55-40e7-8318-46adbd1b1613"
+                },
+                {
+                    "description": "PTH pad 2 [/5V_BEC2] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 106.525
+                    },
+                    "uuid": "187c6e7c-662a-4356-b5bc-44cda47a5f6a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/ESC3] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 107.525
+                    },
+                    "uuid": "b98d3936-60eb-4b5a-86f2-1adc633c3f21"
+                },
+                {
+                    "description": "PTH pad 7 [/ESC3] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 114.705
+                    },
+                    "uuid": "62e805a3-6f8c-4369-b5ae-6c26787e2156"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/AUX_PWM] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 107.525
+                    },
+                    "uuid": "5308714a-2d8d-41f2-aba3-0525c75e8594"
+                },
+                {
+                    "description": "PTH pad 25 [/AUX_PWM] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 137.565
+                    },
+                    "uuid": "cb31a0f4-b06f-4d90-a687-73c60ed7489e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/RECV_CH1] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 110.575
+                    },
+                    "uuid": "f9e6311e-5f4a-40ed-9e8d-dcc6a053d8c2"
+                },
+                {
+                    "description": "PTH pad 11 [/RECV_CH1] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 124.865
+                    },
+                    "uuid": "a9af534e-289b-443b-a4a8-e114dba13d55"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/RECV_CH2] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 111.575
+                    },
+                    "uuid": "969fc088-f4b5-4903-9e96-3be01519d4cd"
+                },
+                {
+                    "description": "PTH pad 12 [/RECV_CH2] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 127.405
+                    },
+                    "uuid": "b009dcd7-f1ce-4743-9687-fb2a1f1fd1b0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/RECV_CH3] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 112.575
+                    },
+                    "uuid": "f614fecb-e19d-467d-9174-907af9e569ae"
+                },
+                {
+                    "description": "PTH pad 13 [/RECV_CH3] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 129.945
+                    },
+                    "uuid": "ee4576dd-8e15-42aa-a71d-7f59904a47ce"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/RECV_CH4] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 113.575
+                    },
+                    "uuid": "bba0a289-8b0b-4b6c-a071-39f5f9222e41"
+                },
+                {
+                    "description": "PTH pad 14 [/RECV_CH4] of U3",
+                    "pos": {
+                        "x": 169.08,
+                        "y": 132.485
+                    },
+                    "uuid": "2b7f0d33-da3f-4fea-9e39-66e7400a89b7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/RECV_CH5] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 114.575
+                    },
+                    "uuid": "fe74dbf4-981d-4415-9d8c-c3658fa434e4"
+                },
+                {
+                    "description": "PTH pad 36 [/RECV_CH5] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 109.625
+                    },
+                    "uuid": "605f9906-89e5-4e68-b35e-7b9871b3f198"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 6 [/RECV-CH6] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 115.575
+                    },
+                    "uuid": "edd0744c-9e79-4a64-9cd2-c5d111bd3e2d"
+                },
+                {
+                    "description": "PTH pad 37 [/RECV-CH6] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 107.085
+                    },
+                    "uuid": "dc7764ad-fe3d-45fb-b39f-586aa456b835"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/USART1_TX] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 118.825
+                    },
+                    "uuid": "42258b63-5194-4ab3-804c-9935fb3d905c"
+                },
+                {
+                    "description": "PTH pad 26 [/USART1_TX] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 135.025
+                    },
+                    "uuid": "98b6b2ca-06f4-4be7-a57f-60e4121d8f66"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/USART1_RX] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 117.825
+                    },
+                    "uuid": "b495e031-76d1-4b03-8b6f-bf362844297a"
+                },
+                {
+                    "description": "PTH pad 27 [/USART1_RX] of U3",
+                    "pos": {
+                        "x": 184.32,
+                        "y": 132.485
+                    },
+                    "uuid": "bb57dacf-adde-4d03-907a-bd1044a548ce"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 105.525
+                    },
+                    "uuid": "5cdf4c09-6cc5-409f-9d81-642e6c0e7b48"
+                },
+                {
+                    "description": "PTH pad 2 [unconnected-(J15-Pin_2-Pad2)] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 106.525
+                    },
+                    "uuid": "7838e880-7d1b-4c56-87bf-356801c6738d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [3.3] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 118.625
+                    },
+                    "uuid": "0752bacf-e1c5-4002-a063-9d9656c877f1"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 118.625
+                    },
+                    "uuid": "d3f76c47-65b9-45cb-a9ee-4878d73a018d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/SDA] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 116.825
+                    },
+                    "uuid": "cc2df3b4-ced8-4ce1-96c6-200c369b8e83"
+                },
+                {
+                    "description": "PTH pad 2 [/SCL] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 117.825
+                    },
+                    "uuid": "2e5251e2-4fd2-4e46-9ca6-0287f612b23e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 105.525
+                    },
+                    "uuid": "a313df79-5d3d-4185-8060-c5bc5e506c80"
+                },
+                {
+                    "description": "PTH pad 2 [/5V_BEC1] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 106.525
+                    },
+                    "uuid": "aaaa37b2-172b-4a37-9d09-594a15fbb663"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 105.525
+                    },
+                    "uuid": "37e83114-cc5f-4d06-b334-8603404f67de"
+                },
+                {
+                    "description": "PTH pad 2 [/5V_BEC2] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 106.525
+                    },
+                    "uuid": "e111db3e-fb55-40e7-8318-46adbd1b1613"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 106.525
+                    },
+                    "uuid": "90f2447f-de44-4e1f-98c7-a0ed597ece60"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 105.525
+                    },
+                    "uuid": "ce97c4e7-feed-4a8e-bdec-332d4ff9a7f7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [3.3] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 111.575
+                    },
+                    "uuid": "d86a2b01-26c1-487a-b0bb-237fb71cf0a6"
+                },
+                {
+                    "description": "PTH pad 1 [unconnected-(J21-Pin_1-Pad1)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 110.575
+                    },
+                    "uuid": "af66039d-48fc-4bdd-b76d-68584c0cb0c1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 105.525
+                    },
+                    "uuid": "37e83114-cc5f-4d06-b334-8603404f67de"
+                },
+                {
+                    "description": "PTH pad 2 [/5V_BEC2] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 106.525
+                    },
+                    "uuid": "e111db3e-fb55-40e7-8318-46adbd1b1613"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 106.525
+                    },
+                    "uuid": "90f2447f-de44-4e1f-98c7-a0ed597ece60"
+                },
+                {
+                    "description": "PTH pad 3 [/ESC4] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 107.525
+                    },
+                    "uuid": "6e3e95c9-0815-4240-9188-97b408841f75"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J1",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 105.525
+                    },
+                    "uuid": "62f81d6a-f122-4e5c-b2f8-079c5df51139"
+                },
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J1",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 106.525
+                    },
+                    "uuid": "d56d616c-8b0c-4cae-9d9d-770c3f047729"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC2] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 106.525
+                    },
+                    "uuid": "187c6e7c-662a-4356-b5bc-44cda47a5f6a"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 105.525
+                    },
+                    "uuid": "f2a474a1-f707-4d29-b563-ebea25c7b62d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC2] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 106.525
+                    },
+                    "uuid": "e111db3e-fb55-40e7-8318-46adbd1b1613"
+                },
+                {
+                    "description": "PTH pad 3 [/ESC3] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 107.525
+                    },
+                    "uuid": "b98d3936-60eb-4b5a-86f2-1adc633c3f21"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 116.825
+                    },
+                    "uuid": "6e972b6c-34d5-4150-9927-30471e1b7c1f"
+                },
+                {
+                    "description": "PTH pad 2 [/USART1_RX] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 117.825
+                    },
+                    "uuid": "b495e031-76d1-4b03-8b6f-bf362844297a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 105.525
+                    },
+                    "uuid": "5cdf4c09-6cc5-409f-9d81-642e6c0e7b48"
+                },
+                {
+                    "description": "PTH pad 2 [unconnected-(J15-Pin_2-Pad2)] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 106.525
+                    },
+                    "uuid": "7838e880-7d1b-4c56-87bf-356801c6738d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J1",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 105.525
+                    },
+                    "uuid": "62f81d6a-f122-4e5c-b2f8-079c5df51139"
+                },
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J1",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 106.525
+                    },
+                    "uuid": "d56d616c-8b0c-4cae-9d9d-770c3f047729"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/SDA] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 116.825
+                    },
+                    "uuid": "cc2df3b4-ced8-4ce1-96c6-200c369b8e83"
+                },
+                {
+                    "description": "PTH pad 2 [/SCL] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 117.825
+                    },
+                    "uuid": "2e5251e2-4fd2-4e46-9ca6-0287f612b23e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC2] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 106.525
+                    },
+                    "uuid": "e111db3e-fb55-40e7-8318-46adbd1b1613"
+                },
+                {
+                    "description": "PTH pad 3 [/ESC3] of J16",
+                    "pos": {
+                        "x": 117.155,
+                        "y": 107.525
+                    },
+                    "uuid": "b98d3936-60eb-4b5a-86f2-1adc633c3f21"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/RECV_CH1] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 110.575
+                    },
+                    "uuid": "f9e6311e-5f4a-40ed-9e8d-dcc6a053d8c2"
+                },
+                {
+                    "description": "PTH pad 2 [/RECV_CH2] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 111.575
+                    },
+                    "uuid": "969fc088-f4b5-4903-9e96-3be01519d4cd"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [3.3] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 111.575
+                    },
+                    "uuid": "d86a2b01-26c1-487a-b0bb-237fb71cf0a6"
+                },
+                {
+                    "description": "PTH pad 3 [G] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 112.575
+                    },
+                    "uuid": "444c5a21-14e6-437f-8974-8b456b1842f8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [3.3] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 118.625
+                    },
+                    "uuid": "0752bacf-e1c5-4002-a063-9d9656c877f1"
+                },
+                {
+                    "description": "PTH pad 4 [/SPI1_CS] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 119.625
+                    },
+                    "uuid": "d2e03c98-12cb-41f1-97ab-ef89a6a78cf2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC2] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 106.525
+                    },
+                    "uuid": "187c6e7c-662a-4356-b5bc-44cda47a5f6a"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 105.525
+                    },
+                    "uuid": "f2a474a1-f707-4d29-b563-ebea25c7b62d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/SCL] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 117.825
+                    },
+                    "uuid": "2e5251e2-4fd2-4e46-9ca6-0287f612b23e"
+                },
+                {
+                    "description": "PTH pad 3 [G] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 118.825
+                    },
+                    "uuid": "1572c99d-273f-4191-acfc-00094b9822e3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/RECV_CH1] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 110.575
+                    },
+                    "uuid": "f9e6311e-5f4a-40ed-9e8d-dcc6a053d8c2"
+                },
+                {
+                    "description": "PTH pad 2 [/RECV_CH2] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 111.575
+                    },
+                    "uuid": "969fc088-f4b5-4903-9e96-3be01519d4cd"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J1",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 106.525
+                    },
+                    "uuid": "d56d616c-8b0c-4cae-9d9d-770c3f047729"
+                },
+                {
+                    "description": "PTH pad 3 [unconnected-(J1-Pin_3-Pad3)] of J1",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 107.525
+                    },
+                    "uuid": "b40b675b-708a-479a-af90-cf47a14f6cfe"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [3.3] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 118.625
+                    },
+                    "uuid": "0752bacf-e1c5-4002-a063-9d9656c877f1"
+                },
+                {
+                    "description": "PTH pad 4 [/SPI1_CS] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 119.625
+                    },
+                    "uuid": "d2e03c98-12cb-41f1-97ab-ef89a6a78cf2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 116.825
+                    },
+                    "uuid": "6e972b6c-34d5-4150-9927-30471e1b7c1f"
+                },
+                {
+                    "description": "PTH pad 2 [/USART1_RX] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 117.825
+                    },
+                    "uuid": "b495e031-76d1-4b03-8b6f-bf362844297a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 106.525
+                    },
+                    "uuid": "90f2447f-de44-4e1f-98c7-a0ed597ece60"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 105.525
+                    },
+                    "uuid": "ce97c4e7-feed-4a8e-bdec-332d4ff9a7f7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [3.3] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 111.575
+                    },
+                    "uuid": "d86a2b01-26c1-487a-b0bb-237fb71cf0a6"
+                },
+                {
+                    "description": "PTH pad 1 [unconnected-(J21-Pin_1-Pad1)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 110.575
+                    },
+                    "uuid": "af66039d-48fc-4bdd-b76d-68584c0cb0c1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/SCL] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 117.825
+                    },
+                    "uuid": "2e5251e2-4fd2-4e46-9ca6-0287f612b23e"
+                },
+                {
+                    "description": "PTH pad 3 [G] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 118.825
+                    },
+                    "uuid": "1572c99d-273f-4191-acfc-00094b9822e3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [unconnected-(J15-Pin_2-Pad2)] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 106.525
+                    },
+                    "uuid": "7838e880-7d1b-4c56-87bf-356801c6738d"
+                },
+                {
+                    "description": "PTH pad 3 [/ESC2] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 107.525
+                    },
+                    "uuid": "be64c206-343c-4d5b-9249-b3d4376df29e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J1",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 106.525
+                    },
+                    "uuid": "d56d616c-8b0c-4cae-9d9d-770c3f047729"
+                },
+                {
+                    "description": "PTH pad 3 [unconnected-(J1-Pin_3-Pad3)] of J1",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 107.525
+                    },
+                    "uuid": "b40b675b-708a-479a-af90-cf47a14f6cfe"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [3.3] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 118.625
+                    },
+                    "uuid": "0752bacf-e1c5-4002-a063-9d9656c877f1"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 118.625
+                    },
+                    "uuid": "d3f76c47-65b9-45cb-a9ee-4878d73a018d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/RECV_CH2] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 111.575
+                    },
+                    "uuid": "969fc088-f4b5-4903-9e96-3be01519d4cd"
+                },
+                {
+                    "description": "PTH pad 3 [/RECV_CH3] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 112.575
+                    },
+                    "uuid": "f614fecb-e19d-467d-9174-907af9e569ae"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/AUX_PWM] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 107.525
+                    },
+                    "uuid": "5308714a-2d8d-41f2-aba3-0525c75e8594"
+                },
+                {
+                    "description": "PTH pad 2 [/5V_BEC2] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 106.525
+                    },
+                    "uuid": "187c6e7c-662a-4356-b5bc-44cda47a5f6a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [3.3] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 119.825
+                    },
+                    "uuid": "21268828-1a8d-47ed-8165-1df4b6685950"
+                },
+                {
+                    "description": "PTH pad 3 [G] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 118.825
+                    },
+                    "uuid": "1572c99d-273f-4191-acfc-00094b9822e3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [G] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 105.525
+                    },
+                    "uuid": "a313df79-5d3d-4185-8060-c5bc5e506c80"
+                },
+                {
+                    "description": "PTH pad 2 [/5V_BEC1] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 106.525
+                    },
+                    "uuid": "aaaa37b2-172b-4a37-9d09-594a15fbb663"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/RECV_CH2] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 111.575
+                    },
+                    "uuid": "969fc088-f4b5-4903-9e96-3be01519d4cd"
+                },
+                {
+                    "description": "PTH pad 3 [/RECV_CH3] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 112.575
+                    },
+                    "uuid": "f614fecb-e19d-467d-9174-907af9e569ae"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [unconnected-(J15-Pin_2-Pad2)] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 106.525
+                    },
+                    "uuid": "7838e880-7d1b-4c56-87bf-356801c6738d"
+                },
+                {
+                    "description": "PTH pad 3 [/ESC2] of J15",
+                    "pos": {
+                        "x": 113.825,
+                        "y": 107.525
+                    },
+                    "uuid": "be64c206-343c-4d5b-9249-b3d4376df29e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/CE] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 119.625
+                    },
+                    "uuid": "75eac6fb-1849-4fe6-b807-dd8799551f70"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 118.625
+                    },
+                    "uuid": "d3f76c47-65b9-45cb-a9ee-4878d73a018d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [3.3] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 111.575
+                    },
+                    "uuid": "d86a2b01-26c1-487a-b0bb-237fb71cf0a6"
+                },
+                {
+                    "description": "PTH pad 3 [G] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 112.575
+                    },
+                    "uuid": "444c5a21-14e6-437f-8974-8b456b1842f8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/AUX_PWM] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 107.525
+                    },
+                    "uuid": "5308714a-2d8d-41f2-aba3-0525c75e8594"
+                },
+                {
+                    "description": "PTH pad 2 [/5V_BEC2] of J27",
+                    "pos": {
+                        "x": 123.815,
+                        "y": 106.525
+                    },
+                    "uuid": "187c6e7c-662a-4356-b5bc-44cda47a5f6a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/USART1_TX] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 118.825
+                    },
+                    "uuid": "42258b63-5194-4ab3-804c-9935fb3d905c"
+                },
+                {
+                    "description": "PTH pad 2 [/USART1_RX] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 117.825
+                    },
+                    "uuid": "b495e031-76d1-4b03-8b6f-bf362844297a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 106.525
+                    },
+                    "uuid": "90f2447f-de44-4e1f-98c7-a0ed597ece60"
+                },
+                {
+                    "description": "PTH pad 3 [/ESC4] of J17",
+                    "pos": {
+                        "x": 120.485,
+                        "y": 107.525
+                    },
+                    "uuid": "6e3e95c9-0815-4240-9188-97b408841f75"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/RECV_CH4] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 113.575
+                    },
+                    "uuid": "bba0a289-8b0b-4b6c-a071-39f5f9222e41"
+                },
+                {
+                    "description": "PTH pad 5 [/RECV_CH5] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 114.575
+                    },
+                    "uuid": "fe74dbf4-981d-4415-9d8c-c3658fa434e4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/CE] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 119.625
+                    },
+                    "uuid": "75eac6fb-1849-4fe6-b807-dd8799551f70"
+                },
+                {
+                    "description": "PTH pad 4 [/SPI1_CS] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 119.625
+                    },
+                    "uuid": "d2e03c98-12cb-41f1-97ab-ef89a6a78cf2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC1] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 106.525
+                    },
+                    "uuid": "aaaa37b2-172b-4a37-9d09-594a15fbb663"
+                },
+                {
+                    "description": "PTH pad 3 [/ESC1] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 107.525
+                    },
+                    "uuid": "69dcb6fc-d55c-4966-988a-cf52fc2e528e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/USART1_TX] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 118.825
+                    },
+                    "uuid": "42258b63-5194-4ab3-804c-9935fb3d905c"
+                },
+                {
+                    "description": "PTH pad 4 [3.3] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 119.825
+                    },
+                    "uuid": "3da99a44-9475-4029-ac9d-eba9738d29c2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/RECV_CH4] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 113.575
+                    },
+                    "uuid": "bba0a289-8b0b-4b6c-a071-39f5f9222e41"
+                },
+                {
+                    "description": "PTH pad 3 [/RECV_CH3] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 112.575
+                    },
+                    "uuid": "f614fecb-e19d-467d-9174-907af9e569ae"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/SCL] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 113.575
+                    },
+                    "uuid": "97fcac4c-a813-4900-9266-fe14861ae12e"
+                },
+                {
+                    "description": "PTH pad 3 [G] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 112.575
+                    },
+                    "uuid": "444c5a21-14e6-437f-8974-8b456b1842f8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/5V_BEC1] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 106.525
+                    },
+                    "uuid": "aaaa37b2-172b-4a37-9d09-594a15fbb663"
+                },
+                {
+                    "description": "PTH pad 3 [/ESC1] of J8",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 107.525
+                    },
+                    "uuid": "69dcb6fc-d55c-4966-988a-cf52fc2e528e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/CE] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 119.625
+                    },
+                    "uuid": "75eac6fb-1849-4fe6-b807-dd8799551f70"
+                },
+                {
+                    "description": "PTH pad 5 [/SPI1_SCK] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 120.625
+                    },
+                    "uuid": "ee3780de-d8b2-4293-89e9-cdeb045db576"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/RECV_CH4] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 113.575
+                    },
+                    "uuid": "bba0a289-8b0b-4b6c-a071-39f5f9222e41"
+                },
+                {
+                    "description": "PTH pad 5 [/RECV_CH5] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 114.575
+                    },
+                    "uuid": "fe74dbf4-981d-4415-9d8c-c3658fa434e4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [3.3] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 119.825
+                    },
+                    "uuid": "21268828-1a8d-47ed-8165-1df4b6685950"
+                },
+                {
+                    "description": "PTH pad 3 [G] of J20",
+                    "pos": {
+                        "x": 110.495,
+                        "y": 118.825
+                    },
+                    "uuid": "1572c99d-273f-4191-acfc-00094b9822e3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/USART1_TX] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 118.825
+                    },
+                    "uuid": "42258b63-5194-4ab3-804c-9935fb3d905c"
+                },
+                {
+                    "description": "PTH pad 2 [/USART1_RX] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 117.825
+                    },
+                    "uuid": "b495e031-76d1-4b03-8b6f-bf362844297a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/CE] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 119.625
+                    },
+                    "uuid": "75eac6fb-1849-4fe6-b807-dd8799551f70"
+                },
+                {
+                    "description": "PTH pad 4 [/SPI1_CS] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 119.625
+                    },
+                    "uuid": "d2e03c98-12cb-41f1-97ab-ef89a6a78cf2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/SCL] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 113.575
+                    },
+                    "uuid": "97fcac4c-a813-4900-9266-fe14861ae12e"
+                },
+                {
+                    "description": "PTH pad 5 [/SDA] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 114.575
+                    },
+                    "uuid": "a42ac6e3-d8ba-4acb-992c-db15a4b4fa18"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/RECV_CH4] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 113.575
+                    },
+                    "uuid": "bba0a289-8b0b-4b6c-a071-39f5f9222e41"
+                },
+                {
+                    "description": "PTH pad 3 [/RECV_CH3] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 112.575
+                    },
+                    "uuid": "f614fecb-e19d-467d-9174-907af9e569ae"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/USART1_TX] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 118.825
+                    },
+                    "uuid": "42258b63-5194-4ab3-804c-9935fb3d905c"
+                },
+                {
+                    "description": "PTH pad 4 [3.3] of J18",
+                    "pos": {
+                        "x": 107.165,
+                        "y": 119.825
+                    },
+                    "uuid": "3da99a44-9475-4029-ac9d-eba9738d29c2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/CE] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 119.625
+                    },
+                    "uuid": "75eac6fb-1849-4fe6-b807-dd8799551f70"
+                },
+                {
+                    "description": "PTH pad 5 [/SPI1_SCK] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 120.625
+                    },
+                    "uuid": "ee3780de-d8b2-4293-89e9-cdeb045db576"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/SCL] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 113.575
+                    },
+                    "uuid": "97fcac4c-a813-4900-9266-fe14861ae12e"
+                },
+                {
+                    "description": "PTH pad 3 [G] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 112.575
+                    },
+                    "uuid": "444c5a21-14e6-437f-8974-8b456b1842f8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 6 [/RECV-CH6] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 115.575
+                    },
+                    "uuid": "edd0744c-9e79-4a64-9cd2-c5d111bd3e2d"
+                },
+                {
+                    "description": "PTH pad 5 [/RECV_CH5] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 114.575
+                    },
+                    "uuid": "fe74dbf4-981d-4415-9d8c-c3658fa434e4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/CE] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 119.625
+                    },
+                    "uuid": "75eac6fb-1849-4fe6-b807-dd8799551f70"
+                },
+                {
+                    "description": "PTH pad 1 [G] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 118.625
+                    },
+                    "uuid": "d3f76c47-65b9-45cb-a9ee-4878d73a018d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/SCL] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 113.575
+                    },
+                    "uuid": "97fcac4c-a813-4900-9266-fe14861ae12e"
+                },
+                {
+                    "description": "PTH pad 5 [/SDA] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 114.575
+                    },
+                    "uuid": "a42ac6e3-d8ba-4acb-992c-db15a4b4fa18"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 6 [/RECV-CH6] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 115.575
+                    },
+                    "uuid": "edd0744c-9e79-4a64-9cd2-c5d111bd3e2d"
+                },
+                {
+                    "description": "PTH pad 5 [/RECV_CH5] of J2",
+                    "pos": {
+                        "x": 121.345,
+                        "y": 114.575
+                    },
+                    "uuid": "fe74dbf4-981d-4415-9d8c-c3658fa434e4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/SPI1_SCK] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 120.625
+                    },
+                    "uuid": "ee3780de-d8b2-4293-89e9-cdeb045db576"
+                },
+                {
+                    "description": "PTH pad 7 [/SPI1_MISO] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 121.625
+                    },
+                    "uuid": "cd330704-011c-470d-a38b-38300832b67f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/SDA] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 114.575
+                    },
+                    "uuid": "a42ac6e3-d8ba-4acb-992c-db15a4b4fa18"
+                },
+                {
+                    "description": "PTH pad 6 [unconnected-(J21-Pin_6-Pad6)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 115.575
+                    },
+                    "uuid": "886cc1fe-be72-4d15-950f-a4f28afcb8eb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/SPI1_SCK] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 120.625
+                    },
+                    "uuid": "ee3780de-d8b2-4293-89e9-cdeb045db576"
+                },
+                {
+                    "description": "PTH pad 7 [/SPI1_MISO] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 121.625
+                    },
+                    "uuid": "cd330704-011c-470d-a38b-38300832b67f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/SDA] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 114.575
+                    },
+                    "uuid": "a42ac6e3-d8ba-4acb-992c-db15a4b4fa18"
+                },
+                {
+                    "description": "PTH pad 6 [unconnected-(J21-Pin_6-Pad6)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 115.575
+                    },
+                    "uuid": "886cc1fe-be72-4d15-950f-a4f28afcb8eb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 6 [/SPI1_MOSI] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 120.625
+                    },
+                    "uuid": "7c9ec133-2857-4778-a7d2-7d7e46ae5faa"
+                },
+                {
+                    "description": "PTH pad 4 [/SPI1_CS] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 119.625
+                    },
+                    "uuid": "d2e03c98-12cb-41f1-97ab-ef89a6a78cf2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 6 [/SPI1_MOSI] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 120.625
+                    },
+                    "uuid": "7c9ec133-2857-4778-a7d2-7d7e46ae5faa"
+                },
+                {
+                    "description": "PTH pad 5 [/SPI1_SCK] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 120.625
+                    },
+                    "uuid": "ee3780de-d8b2-4293-89e9-cdeb045db576"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 7 [unconnected-(J21-Pin_7-Pad7)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 116.575
+                    },
+                    "uuid": "8b2b02e1-cfcc-4f24-949e-2f856f16de41"
+                },
+                {
+                    "description": "PTH pad 6 [unconnected-(J21-Pin_6-Pad6)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 115.575
+                    },
+                    "uuid": "886cc1fe-be72-4d15-950f-a4f28afcb8eb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 6 [/SPI1_MOSI] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 120.625
+                    },
+                    "uuid": "7c9ec133-2857-4778-a7d2-7d7e46ae5faa"
+                },
+                {
+                    "description": "PTH pad 4 [/SPI1_CS] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 119.625
+                    },
+                    "uuid": "d2e03c98-12cb-41f1-97ab-ef89a6a78cf2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 7 [unconnected-(J21-Pin_7-Pad7)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 116.575
+                    },
+                    "uuid": "8b2b02e1-cfcc-4f24-949e-2f856f16de41"
+                },
+                {
+                    "description": "PTH pad 6 [unconnected-(J21-Pin_6-Pad6)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 115.575
+                    },
+                    "uuid": "886cc1fe-be72-4d15-950f-a4f28afcb8eb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 6 [/SPI1_MOSI] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 120.625
+                    },
+                    "uuid": "7c9ec133-2857-4778-a7d2-7d7e46ae5faa"
+                },
+                {
+                    "description": "PTH pad 5 [/SPI1_SCK] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 120.625
+                    },
+                    "uuid": "ee3780de-d8b2-4293-89e9-cdeb045db576"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 8 [unconnected-(J21-Pin_8-Pad8)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 117.575
+                    },
+                    "uuid": "53b7c76e-b190-466d-bb65-e55c409f549b"
+                },
+                {
+                    "description": "PTH pad 7 [unconnected-(J21-Pin_7-Pad7)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 116.575
+                    },
+                    "uuid": "8b2b02e1-cfcc-4f24-949e-2f856f16de41"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 8 [/IRQ] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 121.625
+                    },
+                    "uuid": "ffc2f026-67ed-49b7-9ca9-ab77632ce99b"
+                },
+                {
+                    "description": "PTH pad 6 [/SPI1_MOSI] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 120.625
+                    },
+                    "uuid": "7c9ec133-2857-4778-a7d2-7d7e46ae5faa"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 8 [unconnected-(J21-Pin_8-Pad8)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 117.575
+                    },
+                    "uuid": "53b7c76e-b190-466d-bb65-e55c409f549b"
+                },
+                {
+                    "description": "PTH pad 7 [unconnected-(J21-Pin_7-Pad7)] of J21",
+                    "pos": {
+                        "x": 118.015,
+                        "y": 116.575
+                    },
+                    "uuid": "8b2b02e1-cfcc-4f24-949e-2f856f16de41"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 8 [/IRQ] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 121.625
+                    },
+                    "uuid": "ffc2f026-67ed-49b7-9ca9-ab77632ce99b"
+                },
+                {
+                    "description": "PTH pad 7 [/SPI1_MISO] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 121.625
+                    },
+                    "uuid": "cd330704-011c-470d-a38b-38300832b67f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 8 [/IRQ] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 121.625
+                    },
+                    "uuid": "ffc2f026-67ed-49b7-9ca9-ab77632ce99b"
+                },
+                {
+                    "description": "PTH pad 6 [/SPI1_MOSI] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 120.625
+                    },
+                    "uuid": "7c9ec133-2857-4778-a7d2-7d7e46ae5faa"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 8 [/IRQ] of J32",
+                    "pos": {
+                        "x": 122.355,
+                        "y": 121.625
+                    },
+                    "uuid": "ffc2f026-67ed-49b7-9ca9-ab77632ce99b"
+                },
+                {
+                    "description": "PTH pad 7 [/SPI1_MISO] of J32",
+                    "pos": {
+                        "x": 121.355,
+                        "y": 121.625
+                    },
+                    "uuid": "cd330704-011c-470d-a38b-38300832b67f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Board has malformed outline (no edges found on Edge.Cuts layer)",
+            "items": [
+                {
+                    "description": "PCB",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "c17afc96-1c12-4cf7-bbd4-6dc426ed9536"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        }
+    ]
+}

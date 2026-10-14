@@ -1,0 +1,7 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "MP1584EN-LF-Z") (type "KiCad") (uri "${KIPRJMOD}/MP1584EN-LF-Z.pretty") (options "") (descr ""))
+	(lib (name "FC_PinHeaders") (type "KiCad") (uri "${KIPRJMOD}/FC_PinHeaders.pretty") (options "") (descr "0.8 mm copper pads for 1 mm headers"))
+	(lib (name "FC_WirePad") (type "KiCad") (uri "${KIPRJMOD}/FC_WirePad.pretty") (options "") (descr "External wire pads"))
+	(lib (name "mach_uav_jumpers") (type "KiCad") (uri "${KIPRJMOD}/mach_uav_jumpers.pretty") (options "") (descr "Assembly wire marker"))
+)

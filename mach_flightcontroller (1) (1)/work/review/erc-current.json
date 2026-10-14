@@ -1,0 +1,519 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-11T12:15:54",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.5",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/e7d66091-957f-439c-8f07-f68f25f64183",
+            "violations": [
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol J21 Pin 8 [Pin_8, Passive, Line]",
+                            "pos": {
+                                "x": 0.7747,
+                                "y": 0.3429
+                            },
+                            "uuid": "bc497ab8-96e9-4590-aad1-675a54382337"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol J21 Pin 7 [Pin_7, Passive, Line]",
+                            "pos": {
+                                "x": 0.7747,
+                                "y": 0.3683
+                            },
+                            "uuid": "0b7b1479-0860-4612-89cd-e147cd00b453"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol J21 Pin 6 [Pin_6, Passive, Line]",
+                            "pos": {
+                                "x": 0.7747,
+                                "y": 0.3937
+                            },
+                            "uuid": "dc8725c6-1f5c-4994-ad01-4da9f505f2b7"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Pin 17 [R, Bidirectional, Line]",
+                            "pos": {
+                                "x": 2.8067,
+                                "y": 1.143
+                            },
+                            "uuid": "056d28ed-1fb1-4692-b534-e42abacada1d"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Pin 38 [5V, Power input, Line]",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 0.5842
+                            },
+                            "uuid": "a2491d85-04b0-4dbb-9398-aec281ffd2ae"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Pin 18 [3.3, Power input, Line]",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 0.6096
+                            },
+                            "uuid": "5f261155-b427-4be1-9d6e-44543cf836fb"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Pin 19 [G, Power input, Line]",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 1.143
+                            },
+                            "uuid": "665e72b5-2715-4e65-9120-060954ce37a4"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label '5V'",
+                            "pos": {
+                                "x": 0.3556,
+                                "y": 0.3429
+                            },
+                            "uuid": "ec18b98b-356b-4d82-9fba-b5bb26b5f9fa"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'TIM4_CH3'",
+                            "pos": {
+                                "x": 0.3683,
+                                "y": 1.3462
+                            },
+                            "uuid": "a41f475c-482d-4291-9bcd-d9989772b513"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Both G and GND are attached to the same items; G will be used in the netlist",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Hidden pin 20 [G, Power input, Line]",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 1.143
+                            },
+                            "uuid": "ef8941d9-ad5f-4f2a-8e4f-98c9edb040c4"
+                        },
+                        {
+                            "description": "Label 'GND'",
+                            "pos": {
+                                "x": 0.3937,
+                                "y": 1.2954
+                            },
+                            "uuid": "13ea793c-9a1c-4de5-9715-8a831961c68f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "multiple_net_names"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'ADC1_IN0'",
+                            "pos": {
+                                "x": 0.4191,
+                                "y": 0.9906
+                            },
+                            "uuid": "9f2ddb74-f1ac-4288-b1be-c183a88ffddc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label '5V_BEC2'",
+                            "pos": {
+                                "x": 0.4318,
+                                "y": 0.5207
+                            },
+                            "uuid": "bc86777e-f99b-472d-b4dd-ba72fc8c9642"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Both 3.3 and 3V3 are attached to the same items; 3.3 will be used in the netlist",
+                    "items": [
+                        {
+                            "description": "Symbol U3 Hidden pin 40 [3.3, Power input, Line]",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 0.6096
+                            },
+                            "uuid": "8326e899-a3cb-49ac-9d71-b2a6a11bd62b"
+                        },
+                        {
+                            "description": "Label '3V3'",
+                            "pos": {
+                                "x": 0.4699,
+                                "y": 1.4732
+                            },
+                            "uuid": "21d9b118-766f-41b0-b932-16b2feb68031"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "multiple_net_names"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'Vcc_IN'",
+                            "pos": {
+                                "x": 0.8763,
+                                "y": 0.5207
+                            },
+                            "uuid": "12a555af-f018-40a1-8c4b-3c723150869b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'TIM1_CH1'",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 1.3589
+                            },
+                            "uuid": "9e17f429-b7de-4095-9630-5d0dbbb85b38"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'GPIO2'",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 1.5367
+                            },
+                            "uuid": "6c2da430-3476-4ff0-a37b-036fe556b58a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'SBUS'",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 1.524
+                            },
+                            "uuid": "c2e13f30-fa13-4a3b-87c8-13ac483e94b0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 0.0127 mm",
+                            "pos": {
+                                "x": 1.2573,
+                                "y": 0.6223
+                            },
+                            "uuid": "3a281de5-c260-47dc-98bd-820dc4d96583"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'USB_DM'",
+                            "pos": {
+                                "x": 2.5781,
+                                "y": 0.9398
+                            },
+                            "uuid": "75bf4e37-0f7f-4386-93d6-989572200043"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'USB_DP'",
+                            "pos": {
+                                "x": 2.5781,
+                                "y": 0.9652
+                            },
+                            "uuid": "a6312c47-ec56-4ba8-aaea-acc9a5056ab7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'ADC1'",
+                            "pos": {
+                                "x": 2.6924,
+                                "y": 0.762
+                            },
+                            "uuid": "d64a888f-0f63-44b7-a2ef-a1bd88d2196b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'ADC2'",
+                            "pos": {
+                                "x": 2.6924,
+                                "y": 0.7874
+                            },
+                            "uuid": "8d9bd52b-06a7-4881-8f69-0049316a0e85"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'AUX_PWM'",
+                            "pos": {
+                                "x": 2.6924,
+                                "y": 0.8636
+                            },
+                            "uuid": "699fa1ae-b114-420a-b31d-41f5e28679c9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'VB'",
+                            "pos": {
+                                "x": 2.7051,
+                                "y": 0.6096
+                            },
+                            "uuid": "d3551099-2592-41df-9d58-7dd5a70c8fed"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'C13'",
+                            "pos": {
+                                "x": 2.7305,
+                                "y": 1.0414
+                            },
+                            "uuid": "15c808de-0c80-4d30-a413-735376297dd9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'C14'",
+                            "pos": {
+                                "x": 2.7305,
+                                "y": 1.0668
+                            },
+                            "uuid": "39925f75-8f18-4dbf-8028-dc803f647f92"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'C15'",
+                            "pos": {
+                                "x": 2.7305,
+                                "y": 1.0922
+                            },
+                            "uuid": "e4f7e9ea-9c89-4abc-8baa-ceb496c238d4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0.1016 mm",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 0.7112
+                            },
+                            "uuid": "a5ea2d33-dd42-4f4f-ab2a-a7b13fe01bfa"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'B15'",
+                            "pos": {
+                                "x": 3.1623,
+                                "y": 1.016
+                            },
+                            "uuid": "9f0da02e-797a-4693-8844-6161a6c3a0e8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0.1143 mm",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 0.7366
+                            },
+                            "uuid": "66cd14bc-07d6-4e59-8605-ec229f1a3fa0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 0.1143 mm",
+                            "pos": {
+                                "x": 3.0607,
+                                "y": 0.762
+                            },
+                            "uuid": "51e4446b-cba7-4625-ae7b-d12939f005de"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                }
+            ]
+        }
+    ],
+    "source": "mach_uav.kicad_sch"
+}
