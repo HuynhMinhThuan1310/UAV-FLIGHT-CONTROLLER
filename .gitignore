@@ -4,6 +4,17 @@ sdkconfig.old
 dependencies.lock
 managed_components/
 
+# STM32CubeIDE Build Artifacts
+**/Debug/
+**/Release/
+*.bin
+*.elf
+*.hex
+*.map
+*.list
+*.d
+*.su
+
 # KiCad Artifacts & Backups
 **/*-backups/
 **/.history/
@@ -14,6 +25,8 @@ managed_components/
 **/*.lck
 **/_autosave-*
 **/*.tmp
+sym-lib-table-bak
+fp-lib-table-bak
 
 # Compiled Libraries & Object Files
 *.dll
