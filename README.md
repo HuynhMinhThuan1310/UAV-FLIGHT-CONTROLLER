@@ -14,7 +14,7 @@ uav_ground_station/
 │       ├── doccambien/               # Module đọc và kiểm thử cảm biến (IMU MPU6050, Khí áp, La bàn)
 │       ├── DocRF/                    # Module giao tiếp vô tuyến nRF24L01+
 │       └── PWM_ADC_TIMER/            # Module đọc PWM tay cầm, đo điện áp pin ADC và Timer
-├── mach_flightcontroller (1) (1)/     # Thiết kế phần cứng mạch PCB (KiCad 10)
+├── thiet_ke_mach/                    # Thiết kế phần cứng mạch PCB (KiCad 10)
 │   ├── mach_uav.kicad_sch            # Sơ đồ nguyên lý (Schematic)
 │   ├── mach_uav.kicad_pcb            # Mạch in hoàn chỉnh (Layout 92x92mm)
 │   ├── HUONG_DAN_DI_DAY_NGOAI.md     # Sơ đồ cầu nối ngoài (W1-W6) cho mạch 1 lớp
@@ -53,13 +53,13 @@ Dự án phát triển trên **STM32CubeIDE** cho vi điều khiển **STM32F103
 
 ---
 
-## 2. Thiết Kế Mạch PCB Flight Controller (`mach_flightcontroller`)
+## 2. Thiết Kế Mạch PCB Flight Controller (`thiet_ke_mach/`)
 
 - **Kích thước & Thiết kế:** Bo mạch tiêu chuẩn **92 × 92 mm**, thiết kế trên **KiCad 10**.
 - **Khối nguồn:** Bộ nguồn xung buck converter **MP1584EN** hạ áp từ pin LiPo cấp dòng khỏe **5V BEC**, kết hợp LDO **3.3V** riêng cho cảm biến và radio để chống sụt áp khi 4 động cơ hoạt động hết công suất.
 - **Tối ưu hóa mạch 1 lớp & Thuật toán A* Pathfinder:**
   - Giải pháp mạch 1 lớp (`B.Cu`) không dùng via xuyên tầng, phục vụ gia công CNC tại chỗ.
-  - Xây dựng **thuật toán tìm đường A\* bằng C++** ([`pathfinder.cpp`](file:///C:/uav_ground_station/mach_flightcontroller%20%281%29%20%281%29/work/review/pathfinder.cpp)) biên dịch sang DLL kết hợp script Python `pcbnew` tự động định tuyến đường đồng theo kích thước an toàn (Power: 30–35 mil, Signal: 14 mil, Clearance: 0.20 mm).
+  - Xây dựng **thuật toán tìm đường A\* bằng C++** ([`pathfinder.cpp`](file:///C:/uav_ground_station/thiet_ke_mach/work/review/pathfinder.cpp)) biên dịch sang DLL kết hợp script Python `pcbnew` tự động định tuyến đường đồng theo kích thước an toàn (Power: 30–35 mil, Signal: 14 mil, Clearance: 0.20 mm).
   - Định tuyến tối ưu 6 cầu nối ngoài (**W1 – W6**) có in nhãn rõ ràng trên lớp lụa `F.SilkS`.
   - Phủ đồng mass `GND` diện tích lớn giúp tản nhiệt và chống nhiễu vô tuyến.
 
