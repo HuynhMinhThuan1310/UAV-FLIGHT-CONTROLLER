@@ -1,150 +1,105 @@
-# 🚁 UAV Flight Controller & Real-Time Telemetry Ground Station
+# 🚁 UAV Quadcopter Flight Controller & Telemetry System
 
-Hệ thống điều khiển bay và trạm thu phát dữ liệu từ xa (Telemetry Ground Station) hoàn chỉnh cho máy bay không người lái (UAV / Drone), bao gồm:
-1. **Phần Cứng (Hardware / PCB):** Bo mạch Flight Controller tự thiết kế trên KiCad dựa trên vi điều khiển STM32F103, tích hợp cảm biến IMU, Barometer, La bàn, GPS, điều khiển 4 ESC động cơ, và bộ chuyển nguồn BEC hiệu suất cao. Đặc biệt có bộ công cụ tự động định tuyến mạch 1 lớp (Single-Layer Routing) bằng thuật toán A* (C++ / Python).
-2. **Phần Mềm (Firmware Ground Station):** Trạm mặt đất nhúng trên vi điều khiển **ESP32-C3** chạy **ESP-IDF v5/v6** & **FreeRTOS**, kết nối module RF **nRF24L01+** tốc độ cao (100 Hz), giải mã trực tiếp các gói tin telemetry góc nghiêng, động cơ, cần lái và xuất dữ liệu thời gian thực qua Serial Monitor.
+Hệ thống điều khiển bay (Flight Controller) và trạm thu phát dữ liệu từ xa (Ground Station) hoàn chỉnh cho máy bay không người lái (UAV Quadcopter), bao gồm đầy đủ **Phần cứng (PCB KiCad)**, **Firmware điều khiển bay (STM32CubeIDE)**, và **Firmware trạm thu dữ liệu (ESP32-C3 ESP-IDF)**.
 
 ---
 
-## 📌 Mục Lục
-- [1. Kiến Trúc Tổng Thể](#1-kiến-trúc-tổng-thể)
-- [2. Thiết Kế Mạch PCB Flight Controller](#2-thiết-kế-mạch-pcb-flight-controller)
-  - [2.1 Sơ đồ nguyên lý & Ngoại vi](#21-sơ-đồ-nguyên-lý--ngoại-vi)
-  - [2.2 Tối ưu hóa mạch 1 lớp & Thuật toán A* Routing](#22-tối-ưu-hóa-mạch-1-lớp--thuật-toán-a-routing)
-  - [2.3 Hướng dẫn cầu nối và đi dây ngoài](#23-hướng-dẫn-cầu-nối-và-đi-dây-ngoài)
-- [3. Phần Mềm Trạm Mặt Đất (ESP32-C3 Ground Station)](#3-phần-mềm-trạm-mặt-đất-esp32-c3-ground-station)
-  - [3.1 Driver nRF24L01+ & RF 2.480 GHz](#31-driver-nrf24l01--rf-2480-ghz)
-  - [3.2 Giao thức Telemetry nhị phân (Binary Protocol)](#32-giao-thức-telemetry-nhị-phân-binary-protocol)
-  - [3.3 Kiến trúc đa luồng FreeRTOS](#33-kiến-trúc-đa-luồng-freertos)
-- [4. Sơ Đồ Nối Dây ESP32-C3 và nRF24L01](#4-sơ-đồ-nối-dây-esp32-c3-và-nrf24l01)
-- [5. Hướng Dẫn Biên Dịch & Nạp Code](#5-hướng-dẫn-biên-dịch--nạp-code)
-- [6. Kỹ Năng Kỹ Thuật Đạt Được (Portfolio Highlights)](#6-kỹ-năng-kỹ-thuật-đạt-được-portfolio-highlights)
+## 📌 Cấu Trúc Dự Án (Repository Structure)
 
----
-
-## 1. Kiến Trúc Tổng Thể
-
-```
-+-------------------------------------------------------------+
-|              UAV FLIGHT CONTROLLER (STM32F103)              |
-|  - Cảm biến IMU (MPU6050), Khí áp Baro, La bàn số, GPS      |
-|  - Điều khiển 4 ESC động cơ không chổi than (PWM 1-2 ms)    |
-|  - Module nRF24L01+ truyền Telemetry 100 Hz (Kênh 80)       |
-+------------------------------+------------------------------+
-                               |
-                   Sóng RF 2.480 GHz (1 Mbps)
-                   Giao thức nhị phân 32 byte + CRC-8
-                               |
-                               v
-+-------------------------------------------------------------+
-|          GROUND STATION (ESP32-C3 RISC-V SoC)              |
-|  - FreeRTOS Task 1: Thu nhận SPI FIFO & Kiểm tra CRC-8       |
-|  - FreeRTOS Task 2: Thống kê tần số gói (Hz), Link Quality  |
-|  - UART / Serial: Xuất log telemetry thời gian thực tốc độ  |
-|    cao (Roll, Pitch, Heading, Motors, RC Sticks, Armed, FS)  |
-+-------------------------------------------------------------+
+```text
+uav_ground_station/
+├── mach-UAV-main/                    # Firmware STM32CubeIDE cho máy bay
+│   └── firmware/
+│       ├── uav_complete_fc/          # >> Firmware điều khiển bay hoàn chỉnh (Quad Flight Controller)
+│       ├── doccambien/               # Module đọc và kiểm thử cảm biến (IMU MPU6050, Khí áp, La bàn)
+│       ├── DocRF/                    # Module giao tiếp vô tuyến nRF24L01+
+│       └── PWM_ADC_TIMER/            # Module đọc PWM tay cầm, đo điện áp pin ADC và Timer
+├── mach_flightcontroller (1) (1)/     # Thiết kế phần cứng mạch PCB (KiCad 10)
+│   ├── mach_uav.kicad_sch            # Sơ đồ nguyên lý (Schematic)
+│   ├── mach_uav.kicad_pcb            # Mạch in hoàn chỉnh (Layout 92x92mm)
+│   ├── HUONG_DAN_DI_DAY_NGOAI.md     # Sơ đồ cầu nối ngoài (W1-W6) cho mạch 1 lớp
+│   └── work/review/                  # Thuật toán A* Routing tự động hóa (C++ DLL & Python pcbnew)
+└── main/                             # Firmware trạm mặt đất Ground Station (ESP32-C3)
+    ├── main.c                        # FreeRTOS tasks giải mã telemetry và log Serial Monitor
+    ├── nrf24_rx.c / nrf24_rx.h       # Driver SPI cho nRF24L01+ ở tần số 2.480 GHz
+    └── telemetry_protocol.h          # Giao thức truyền tin nhị phân 32 byte + CRC-8
 ```
 
 ---
 
-## 2. Thiết Kế Mạch PCB Flight Controller
+## 1. Firmware Điều Khiển Bay STM32 (`mach-UAV-main/firmware/uav_complete_fc`)
 
-Thư mục: `mach_flightcontroller (1) (1)/`
+Dự án phát triển trên **STM32CubeIDE** cho vi điều khiển **STM32F103C8T6 (ARM Cortex-M3 @ 72 MHz HSE)**:
 
-### 2.1 Sơ đồ nguyên lý & Ngoại vi
-Bo mạch điều khiển bay được thiết kế trên **KiCad 10** với kích thước tiêu chuẩn **92 × 92 mm**, hỗ trợ đầy đủ các khối chức năng phục vụ bay tự cân bằng:
-- **MCU Trung tâm (`U3`):** STM32F103C8T6 (BluePill) chạy vòng lặp điều khiển PID tốc độ cao.
-- **Khối Quản lý Nguồn:** Tích hợp module chuyển nguồn hạ áp xung **MP1584EN** (Step-down Buck Converter) chuyển đổi từ pin LiPo 2S–4S sang nguồn sạch **5V BEC**, cùng mạch lọc LDO **3.3V** riêng biệt cho cảm biến và radio RF.
-- **Cụm Cảm biến:**
-  - `J21` (IMU): MPU6050 (3-axis Gyroscope + 3-axis Accelerometer).
-  - `J22` (Barometer): Cảm biến áp suất khí quyển đo độ cao tuyệt đối.
-  - `J20` (I2C): Giao tiếp cảm biến từ trường / la bàn số magnetometer.
-- **Cụm Định vị & Điều hướng:** `J26` kết nối GPS module (hỗ trợ footprint SMD pad 1.0mm và header chuyển tiếp).
-- **Cụm Động lực:** `J8`, `J15`, `J16`, `J17` (ESC1 - ESC4) xuất tín hiệu xung PWM (1000 - 2000 µs) điều khiển 4 động cơ không chổi than.
-- **Cụm Thu/Phát:** `J32` (nRF24L01+) truyền nhận dữ liệu tầm xa; `J1`, `J2` nhận tín hiệu tay cầm điều khiển (RC Receiver).
-- **Cổng Giao tiếp & Gỡ lỗi:** `J18` (USART1 Debug/Telemetry), `J27` (Servo phụ).
-
-### 2.2 Tối ưu hóa mạch 1 lớp & Thuật toán A* Routing
-Điểm đột phá của dự án là giải pháp thiết kế mạch **1 lớp (Single-Layer PCB)** trên lớp mặt dưới (`B.Cu`), giúp chế tạo mạch nhanh bằng phương pháp phay CNC hoặc ăn mòn hóa học tại xưởng:
-- **Thuật toán A* Pathfinder (`pathfinder.cpp`):** Được viết bằng C++ với độ phức tạp tối ưu, hỗ trợ heuristic khoảng cách Chebyshev/Euclid trên lưới đồ thị rời rạc, xuất thành thư viện động DLL để Python gọi trực tiếp.
-- **Tập lệnh Python Tự động hóa (`route_flightcontroller.py`):** Sử dụng API `pcbnew` của KiCad để đọc linh kiện, tạo vùng cản (obstacle grid) dựa trên clearance cách ly 0.20 mm, tự động thương lượng độ rộng đường mạch (Power trace 30–35 mil, Signal 14 mil) và tìm đường đi ngắn nhất không chạm chập.
-- **0 Via, Phủ Đồng Mass Toàn Diện:** Toàn bộ đường tín hiệu đi trên `B.Cu`, để dành khoảng trống tối đa phủ mặt phẳng đất GND (`G`) giúp giảm nhiễu vô tuyến.
-
-### 2.3 Hướng dẫn cầu nối và đi dây ngoài
-Để đạt được mạch 1 lớp không qua via, 6 đường tín hiệu/nguồn giao cắt được tối ưu thành 6 cầu nối ngoài (**W1 – W6**), có in sẵn nhãn chỉ dẫn trên lớp lụa (`F.SilkS`):
-- **W1:** `SPI1_MOSI` (U3 chân 33 $\rightarrow$ J32 chân 6)
-- **W2:** `5V_BEC` (J1 chân 2 $\rightarrow$ U3 chân 38)
-- **W3:** `USART1_RX` (J18 chân 2 $\rightarrow$ U3 chân 27)
-- **W4:** `USART1_TX` (J18 chân 3 $\rightarrow$ U3 chân 26)
-- **W5:** `USART3_RX` (U3 chân 16 $\rightarrow$ Lỗ xuyên W5B đến J26 chân 2)
-- **W6:** `USART3_TX` (U3 chân 15 $\rightarrow$ Lỗ xuyên W6B đến J26 chân 1)
+- **Chế độ bay (Flight Mode):** Cố định chế độ cân bằng góc (`ANGLE Mode`) kết hợp tự động bù góc nghiêng.
+- **Vòng lặp điều khiển PID:** Bộ điều khiển PID độc lập cho 3 trục Roll, Pitch, Yaw với:
+  - Tích hợp bộ lọc đạo hàm (`d_filter`).
+  - Khử bão hòa tích phân (Anti-windup Integrator Limit).
+  - Giới hạn ngõ ra an toàn (`output_limit`).
+- **Xử lý cảm biến góc nghiêng & La bàn (GY-87):**
+  - Giao tiếp cảm biến `MPU6050` (Gyro + Accel) qua **Hardware I2C1 (`PB6/PB7`)** được cấu hình thanh ghi trực tiếp, tránh trễ và lỗi bus của thư viện HAL.
+  - Tích hợp la bàn số `HMC5883L` sửa trôi góc Yaw theo thời gian thực (loại bỏ nhiễu từ trường khi dòng tải động cơ thay đổi đột ngột).
+- **Giữ hướng bay (Heading Hold):** Khóa hướng tham chiếu (`REF`) bằng tích phân con quay hồi chuyển, duy trì mũi máy bay ổn định khi buông cần lái Yaw.
+- **Đọc tín hiệu điều khiển RC (PWM Input Capture):**
+  - 4 kênh PWM trên Timer `TIM3` (Roll: `PA6`, Pitch: `PA7`, Throttle: `PB0`, Yaw: `PB1`).
+  - Khóa/Mở khóa động cơ bằng tổ hợp cần lái an toàn:
+    - **Arm:** `Ga thấp + Gạt hết Yaw sang Phải trong 3s`.
+    - **Disarm:** `Ga thấp + Gạt hết Yaw sang Trái trong 3s`.
+- **Ngõ ra điều khiển động cơ (ESC Outputs):**
+  - 4 kênh xung PWM độc lập (1000 - 2000 µs) trên Timer `TIM2` (`PA0`, `PA1`, `PA2`, `PA3`) bố trí theo layout quad X (`M1-M4`).
+- **Cơ chế an toàn Failsafe đa cấp (`FailsafeMode`):**
+  - Tự động phát hiện mất sóng vô tuyến hoặc mất xung PWM máy thu: Chuyển sang giữ thăng bằng (`HOLD`) $\rightarrow$ hạ độ cao từ từ (`DESCEND`) $\rightarrow$ phục hồi nếu có lại sóng (`RECOVER`).
+  - Tự động ngắt khẩn cấp (Emergency Disarm) nếu cảm biến IMU bị lỗi liên tục.
 
 ---
 
-## 3. Phần Mềm Trạm Mặt Đất (ESP32-C3 Ground Station)
+## 2. Thiết Kế Mạch PCB Flight Controller (`mach_flightcontroller`)
 
-Thư mục: `main/`
-
-### 3.1 Driver nRF24L01+ & RF 2.480 GHz
-- Giao tiếp qua **SPI phần cứng** với tần số xung nhịp 2 MHz đảm bảo độ ổn định cao với module anten rời PA/LNA.
-- Cấu hình ở chế độ **PRX (Primary Receiver)**, địa chỉ nhận 5 byte `{ 0x6B, 0xE3, 0x1C, 0x95, 0xA2 }`.
-- Hoạt động tại **Kênh 80 (2480 MHz)**: Tần số này nằm ngoài phổ các kênh WiFi 1–11 thông thường, hạn chế tối đa hiện tượng can nhiễu.
-
-### 3.2 Giao thức Telemetry nhị phân (Binary Protocol)
-Gói tin có kích thước cố định **32 byte**, thiết kế tối ưu cho nRF24L01 payload:
-- **Byte 0:** Định danh loại khung (Frame Type: `0xA1` .. `0xA5`).
-- **Byte 1:** Số thứ tự gói (`seq`) dùng để phát hiện gói tin bị mất: $\Delta \text{loss} = \text{seq} - \text{last\_seq} - 1$.
-- **Byte 2..30:** Dữ liệu cảm biến và trạng thái bay (Little-endian).
-- **Byte 31:** Mã kiểm tra toàn vẹn **CRC-8** (Đa thức $x^8 + x^2 + x + 1$, Poly `0x07`).
-
-#### Các khung truyền dữ liệu:
-| Mã khung | Tên khung | Tần số | Nội dung dữ liệu |
-| :---: | :---: | :---: | :--- |
-| `0xA1` | **ATTITUDE** | 50 Hz | Góc nghiêng Roll, Pitch, Heading (0.01°), Vận tốc góc Gyro 3 trục, Giá trị PID, Xung 4 động cơ ESC (µs), cờ Armed/Failsafe |
-| `0xA2` | **RC STICKS** | 25 Hz | Giá trị thô và giá trị chuẩn hóa cần lái RC, Xung điều khiển Servo |
-| `0xA3` | **STATUS** | 10 Hz | Uptime FC, Trạng thái cảm biến IMU/Mag, Chu kỳ vòng lặp PID (`loop_dt_us`), Chế độ Failsafe |
-| `0xA4` | **TUNE/MAG** | 10 Hz | Dữ liệu từ trường 3 trục, Góc la bàn số (Compass Heading), Dynamic Yaw tuning |
-| `0xA5` | **CONFIG** | 5 Hz | Cấu hình tâm RC và bộ hệ số PID (Kp, Ki, Kd) của các trục Roll, Pitch, Yaw |
-
-### 3.3 Kiến trúc đa luồng FreeRTOS
-- **`telemetry_rx_task` (Priority 5, 4KB Stack):** Quét bộ đệm RX FIFO của nRF24, kiểm tra CRC-8, giải mã cấu trúc dữ liệu nhị phân và cập nhật vào `GroundStationState` được bảo vệ bởi FreeRTOS Mutex.
-- **`telemetry_stats_task` (Priority 1, 3KB Stack):** Chu kỳ 1 giây, tính toán tần số nhận gói thực tế (Hz), tỷ lệ mất gói (Packet Loss Rate), chất lượng đường truyền sóng (Link Quality %) và giám sát timeout mất kết nối (Failsafe Timeout 600 ms). Xuất log trực quan ra Serial Monitor.
+- **Kích thước & Thiết kế:** Bo mạch tiêu chuẩn **92 × 92 mm**, thiết kế trên **KiCad 10**.
+- **Khối nguồn:** Bộ nguồn xung buck converter **MP1584EN** hạ áp từ pin LiPo cấp dòng khỏe **5V BEC**, kết hợp LDO **3.3V** riêng cho cảm biến và radio để chống sụt áp khi 4 động cơ hoạt động hết công suất.
+- **Tối ưu hóa mạch 1 lớp & Thuật toán A* Pathfinder:**
+  - Giải pháp mạch 1 lớp (`B.Cu`) không dùng via xuyên tầng, phục vụ gia công CNC tại chỗ.
+  - Xây dựng **thuật toán tìm đường A\* bằng C++** ([`pathfinder.cpp`](file:///C:/uav_ground_station/mach_flightcontroller%20%281%29%20%281%29/work/review/pathfinder.cpp)) biên dịch sang DLL kết hợp script Python `pcbnew` tự động định tuyến đường đồng theo kích thước an toàn (Power: 30–35 mil, Signal: 14 mil, Clearance: 0.20 mm).
+  - Định tuyến tối ưu 6 cầu nối ngoài (**W1 – W6**) có in nhãn rõ ràng trên lớp lụa `F.SilkS`.
+  - Phủ đồng mass `GND` diện tích lớn giúp tản nhiệt và chống nhiễu vô tuyến.
 
 ---
 
-## 4. Sơ Đồ Nối Dây ESP32-C3 và nRF24L01
+## 3. Firmware Trạm Thu Mặt Đất ESP32-C3 (`main/`)
 
-| Chân nRF24L01 | Ký hiệu | Nối với ESP32-C3 | Mô tả chức năng |
-| :---: | :---: | :---: | :--- |
-| **Pin 1** | **GND** | **GND** | Mass chung |
-| **Pin 2** | **VCC** | **3.3V** | Nguồn 3.3V sạch *(khuyến nghị hàn thêm tụ 10–100 µF)* |
-| **Pin 3** | **CE** | **GPIO 3** | Chip Enable (kích hoạt thu sóng) |
-| **Pin 4** | **CSN** | **GPIO 7** | SPI Chip Select (Active Low) |
-| **Pin 5** | **SCK** | **GPIO 4** | SPI Clock |
-| **Pin 6** | **MOSI** | **GPIO 6** | SPI Master Out Slave In |
-| **Pin 7** | **MISO** | **GPIO 5** | SPI Master In Slave Out |
-| **Pin 8** | **IRQ** | *(Không nối)* | Trạng thái ngắt đọc trực tiếp qua thanh ghi SPI |
+- **Framework & RTOS:** Viết bằng native **ESP-IDF (v5.x/v6.x)** chạy trên nhân RISC-V của **ESP32-C3** với hệ điều hành thời gian thực **FreeRTOS**.
+- **Giao thức Telemetry tốc độ cao (100 Hz):**
+  - Gói tin nhị phân định dạng cố định **32 byte**, bảo vệ toàn vẹn bằng **CRC-8** (đa thức $0x07$).
+  - Truyền nhận các khung: Góc nghiêng Roll/Pitch/Heading (`0xA1`), Vị trí cần lái RC (`0xA2`), Trạng thái vi điều khiển & chu kỳ vòng lặp PID (`0xA3`), Cân chỉnh la bàn (`0xA4`), Cấu hình PID (`0xA5`).
+- **Driver vô tuyến nRF24L01+:**
+  - Tần số **2.480 GHz (Kênh 80)**, tốc độ 1 Mbps, tránh hoàn toàn dải tần WiFi gia đình để thu tín hiệu ổn định.
+- **Hiển thị dữ liệu qua Serial Monitor:**
+  - Xuất log trực quan chu kỳ 1 giây: Tần số nhận gói (Hz), tỷ lệ mất gói (loss count), chất lượng link (%), trạng thái Arm/Failsafe, độ rộng xung 4 động cơ và góc nghiêng máy bay.
 
 ---
 
-## 5. Hướng Dẫn Biên Dịch & Nạp Code
+## 4. Hướng Dẫn Biên Dịch & Nạp Code
 
+### 4.1 Nạp Firmware STM32 Flight Controller:
+1. Mở phần mềm **STM32CubeIDE**.
+2. Chọn `File` $\rightarrow$ `Open Projects from File System...` $\rightarrow$ trỏ đến thư mục `mach-UAV-main/firmware/uav_complete_fc`.
+3. Kết nối mạch STM32 qua mạch nạp ST-Link (SWDIO `PA13`, SWCLK `PA14`).
+4. Bấm **Build** (búa) và **Run / Flash** để nạp chương trình.
+
+### 4.2 Nạp Firmware ESP32-C3 Ground Station:
 ```bash
-# 1. Cấu hình target chip ESP32-C3
+# Đứng tại thư mục gốc uav_ground_station
 idf.py set-target esp32c3
-
-# 2. Biên dịch firmware
 idf.py build
-
-# 3. Nạp code và mở cổng Serial theo dõi log (thay COMx bằng cổng của bạn)
 idf.py -p COMx flash monitor
 ```
 
 ---
 
-## 6. Kỹ Năng Kỹ Thuật Đạt Được (Portfolio Highlights)
+## 5. Kỹ Năng Kỹ Thuật Đạt Được (Portfolio Highlights)
 
-- **Thiết kế Phần Cứng & PCB:** Thiết kế mạch nguyên lý (Schematic) và layout mạch in (PCB) nhiều lớp/một lớp trên KiCad, tính toán tiết diện đường nguồn, khử nhiễu tín hiệu RF, tối ưu hóa điểm tiếp xúc mass.
-- **Thuật Toán Tự Động Hóa:** Áp dụng thuật toán tìm đường A* (A-Star) viết bằng C++ và tích hợp qua Python `pcbnew` API để giải bài toán định tuyến mạch in tự động.
-- **Lập Trình Vi Điều Khiển & Hệ Điều Hành Thời Gian Thực:** Lập trình C trên nền ESP-IDF, phân luồng đa nhiệm với FreeRTOS (Task Priority, Mutex, Timer, ISR safe).
-- **Giao Tiếp Vô Tuyến RF:** Giao tiếp SPI tốc độ cao với nRF24L01+, cấu hình thanh ghi RF, nhảy kênh tránh can nhiễu WiFi, tối ưu hóa kích thước khung truyền và kiểm lỗi CRC-8.
+- **Lập trình Vi Điều Khiển & Nhúng Chuyên Sâu:** C/C++, ARM Cortex-M (STM32F103) trần (Bare-metal) & HAL, ESP32-C3 RISC-V với FreeRTOS.
+- **Hệ Thống Điều Khiển Tự Động (Control Systems):** Thiết kế bộ điều khiển PID góc nghiêng máy bay, bộ lọc số (Digital Filter), thuật toán khóa hướng Heading Hold, xử lý an toàn Failsafe.
+- **Thiết Kế Phần Cứng & PCB:** Thiết kế mạch nguyên lý, phân tách vùng nguồn số/tương tự/động lực, tính toán tiết diện đường nguồn công suất cao, thiết kế footprint trên KiCad 10.
+- **Thuật Toán Tối Ưu Hóa (Algorithms):** Xây dựng thuật toán định tuyến tự động A* bằng C++ DLL kết hợp Python Scripting (`pcbnew`) trên hình học lưới PCB.
+- **Truyền Thông Không Dây (RF Communications):** Giao thức truyền tin nhị phân tốc độ cao qua sóng 2.4 GHz nRF24L01+, kiểm tra toàn vẹn CRC-8.
