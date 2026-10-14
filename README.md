@@ -18,7 +18,8 @@ uav_ground_station/
 │   ├── mach_uav.kicad_sch            # Sơ đồ nguyên lý (Schematic)
 │   ├── mach_uav.kicad_pcb            # Mạch in hoàn chỉnh (Layout 92x92mm)
 │   ├── HUONG_DAN_DI_DAY_NGOAI.md     # Sơ đồ cầu nối ngoài (W1-W6) cho mạch 1 lớp
-│   └── work/review/                  # Thuật toán A* Routing tự động hóa (C++ DLL & Python pcbnew)
+│   ├── mach_uav-*.gbr                # Bộ file Gerber sản xuất mạch in
+│   └── *.pretty / ZC323000/          # Thư viện footprint linh kiện tùy chỉnh
 └── main/                             # Firmware trạm mặt đất Ground Station (ESP32-C3)
     ├── main.c                        # FreeRTOS tasks giải mã telemetry và log Serial Monitor
     ├── nrf24_rx.c / nrf24_rx.h       # Driver SPI cho nRF24L01+ ở tần số 2.480 GHz
@@ -57,10 +58,10 @@ Dự án phát triển trên **STM32CubeIDE** cho vi điều khiển **STM32F103
 
 - **Kích thước & Thiết kế:** Bo mạch tiêu chuẩn **92 × 92 mm**, thiết kế trên **KiCad 10**.
 - **Khối nguồn:** Bộ nguồn xung buck converter **MP1584EN** hạ áp từ pin LiPo cấp dòng khỏe **5V BEC**, kết hợp LDO **3.3V** riêng cho cảm biến và radio để chống sụt áp khi 4 động cơ hoạt động hết công suất.
-- **Tối ưu hóa mạch 1 lớp & Thuật toán A* Pathfinder:**
-  - Giải pháp mạch 1 lớp (`B.Cu`) không dùng via xuyên tầng, phục vụ gia công CNC tại chỗ.
-  - Xây dựng **thuật toán tìm đường A\* bằng C++** ([`pathfinder.cpp`](file:///C:/uav_ground_station/thiet_ke_mach/work/review/pathfinder.cpp)) biên dịch sang DLL kết hợp script Python `pcbnew` tự động định tuyến đường đồng theo kích thước an toàn (Power: 30–35 mil, Signal: 14 mil, Clearance: 0.20 mm).
-  - Định tuyến tối ưu 6 cầu nối ngoài (**W1 – W6**) có in nhãn rõ ràng trên lớp lụa `F.SilkS`.
+- **Tối ưu hóa mạch 1 lớp & Giải pháp đi dây ngoài:**
+  - Thiết kế mạch 1 lớp trên mặt đáy (`B.Cu`) không dùng via xuyên tầng, tối ưu cho gia công nhanh bằng phay CNC hoặc ăn mòn hóa học.
+  - Định tuyến thông minh tối ưu hóa độ rộng đường mạch (Power trace 30–35 mil, Signal 14 mil, Clearance 0.20 mm).
+  - Tối ưu 6 cầu nối ngoài (**W1 – W6**) có in nhãn hướng dẫn rõ ràng trực tiếp trên lớp lụa `F.SilkS` ([`HUONG_DAN_DI_DAY_NGOAI.md`](file:///C:/uav_ground_station/thiet_ke_mach/HUONG_DAN_DI_DAY_NGOAI.md)).
   - Phủ đồng mass `GND` diện tích lớn giúp tản nhiệt và chống nhiễu vô tuyến.
 
 ---
@@ -101,5 +102,5 @@ idf.py -p COMx flash monitor
 - **Lập trình Vi Điều Khiển & Nhúng Chuyên Sâu:** C/C++, ARM Cortex-M (STM32F103) trần (Bare-metal) & HAL, ESP32-C3 RISC-V với FreeRTOS.
 - **Hệ Thống Điều Khiển Tự Động (Control Systems):** Thiết kế bộ điều khiển PID góc nghiêng máy bay, bộ lọc số (Digital Filter), thuật toán khóa hướng Heading Hold, xử lý an toàn Failsafe.
 - **Thiết Kế Phần Cứng & PCB:** Thiết kế mạch nguyên lý, phân tách vùng nguồn số/tương tự/động lực, tính toán tiết diện đường nguồn công suất cao, thiết kế footprint trên KiCad 10.
-- **Thuật Toán Tối Ưu Hóa (Algorithms):** Xây dựng thuật toán định tuyến tự động A* bằng C++ DLL kết hợp Python Scripting (`pcbnew`) trên hình học lưới PCB.
+- **Thiết Kế Mạch In & Đi Dây Tối Ưu:** Thiết kế và định tuyến mạch 1 lớp (Single-Layer PCB) không dùng via, tối ưu khoảng cách cách ly (Clearance) và độ rộng đường mạch theo dòng tải thực tế.
 - **Truyền Thông Không Dây (RF Communications):** Giao thức truyền tin nhị phân tốc độ cao qua sóng 2.4 GHz nRF24L01+, kiểm tra toàn vẹn CRC-8.

@@ -1,5 +1,0 @@
-ATTEMPT 0 failed 11 seconds 12
-SAVED 0 unrouted branches 11 [('/B13', 'J32', '2'), ('/5V_BEC', 'J17', '2'), ('3.3', 'J32', '8'), ('3.3', 'J21', '2'), ('3.3', 'J20', '4'), ('G', 'J21', '3'), ('G', 'J20', '3'), ('G', 'J32', '1'), ('G', 'J17', '1'), ('G', 'J24', '2'), ('G', 'J26', '3')]
-ATTEMPT 1 failed 16 seconds 38
-ATTEMPT 2 failed 16 seconds 58
-ATTEMPT 3 failed 14 seconds 69

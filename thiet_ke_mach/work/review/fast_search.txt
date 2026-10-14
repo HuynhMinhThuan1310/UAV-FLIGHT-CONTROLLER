@@ -1,9 +1,0 @@
-import ctypes
-lib=ctypes.CDLL(str(pathlib.Path('work/review/pathfinder.dll').resolve()))
-lib.findpath.argtypes=[ctypes.c_int,ctypes.c_int,ctypes.c_void_p,ctypes.c_void_p,ctypes.c_int,ctypes.c_void_p,ctypes.c_int,ctypes.c_void_p]
-lib.findpath.restype=ctypes.c_int
-
-def search(block,costs,start,targets):
- block=np.ascontiguousarray(block,dtype=np.uint8); costs=np.ascontiguousarray(costs,dtype=np.float32); tg=np.array(list(targets),dtype=np.int32);out=np.empty(NX*NY,dtype=np.int32)
- count=lib.findpath(NX,NY,block.ctypes.data,costs.ctypes.data,start,tg.ctypes.data,len(tg),out.ctypes.data)
- return out[:count].tolist() if count else None
